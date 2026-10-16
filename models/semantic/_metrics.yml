@@ -1,0 +1,784 @@
+# Governed metric definitions.
+#
+# This file is the SINGLE SOURCE OF TRUTH for the metrics catalog. Every metric carries a
+# `governance` block that scripts/build_metrics_catalog.py turns into the published catalog
+# (metrics_catalog/) and that scripts/lint_metrics.py enforces in CI (RFC-0001 §6).
+#
+#   tier 1  board / investor metrics. Change needs Metrics Council approval + 2 owners.
+#   tier 2  departmental operating metrics. Change needs business owner + data steward.
+#   tier 3  components and exploratory metrics. Steward approval only.
+#   status  proposed -> beta -> certified -> deprecated -> retired
+version: 2
+
+metrics:
+  # ======================================================================= recurring revenue
+  - name: mrr
+    label: Monthly Recurring Revenue (MRR)
+    description: >
+      Contracted recurring revenue in force at month end, normalised to one month, net of
+      recurring discounts, in constant currency. Excludes one-time services, usage overage,
+      taxes, and free plans. Not affected by invoices or refunds.
+    type: simple
+    type_params: {measure: mrr_usd}
+    config:
+      meta:
+        governance:
+          tier: 1
+          status: certified
+          version: "2.1.0"
+          domain: Recurring revenue
+          business_owner: VP Finance (FP&A)
+          data_steward: Analytics Engineering, Finance pod
+          certified_on: "2026-03-02"
+          next_review: "2027-03-02"
+          refresh: Daily 06:00 UTC; a month locks on business day 5 after close
+          logic_rules: [MLR-001, MLR-004, MLR-005, MLR-006, MLR-010]
+          formula: "SUM(month-end mrr_local x planning FX rate) over active subscription versions"
+          consumers: [Board pack, Executive KPI dashboard, Salesforce ARR sync]
+
+  - name: arr
+    label: Annual Recurring Revenue (ARR)
+    description: MRR x 12. A run-rate, not a forecast or a bookings number. Multi-year ramps use the CURRENT year's price.
+    type: simple
+    type_params: {measure: arr_usd}
+    config:
+      meta:
+        governance:
+          tier: 1
+          status: certified
+          version: "2.1.0"
+          domain: Recurring revenue
+          business_owner: VP Finance (FP&A)
+          data_steward: Analytics Engineering, Finance pod
+          certified_on: "2026-03-02"
+          next_review: "2027-03-02"
+          refresh: Daily 06:00 UTC; a month locks on business day 5 after close
+          logic_rules: [MLR-001, MLR-004, MLR-005, MLR-006]
+          formula: "mrr x 12"
+          consumers: [Board pack, Investor update, Executive KPI dashboard]
+
+  - name: new_mrr
+    label: New MRR
+    description: MRR from accounts paying for the first time this month, including free-to-paid conversions.
+    type: simple
+    type_params: {measure: new_mrr_usd}
+    config:
+      meta:
+        governance:
+          tier: 2
+          status: certified
+          version: "2.0.0"
+          domain: Recurring revenue
+          business_owner: CRO (Revenue Operations)
+          data_steward: Analytics Engineering, Finance pod
+          certified_on: "2026-03-02"
+          next_review: "2027-03-02"
+          refresh: Daily 06:00 UTC
+          logic_rules: [MLR-005, MLR-016]
+          formula: "SUM(mrr) where previous month MRR = 0 and the account has never paid before"
+          consumers: [MRR waterfall, Sales performance dashboard]
+
+  - name: expansion_mrr
+    label: Expansion MRR
+    description: Month-over-month MRR increase from existing paying accounts (seats, plan upgrades, price increases).
+    type: simple
+    type_params: {measure: expansion_mrr_usd}
+    config:
+      meta:
+        governance:
+          tier: 2
+          status: certified
+          version: "2.0.0"
+          domain: Recurring revenue
+          business_owner: CRO (Revenue Operations)
+          data_steward: Analytics Engineering, Finance pod
+          certified_on: "2026-03-02"
+          next_review: "2027-03-02"
+          refresh: Daily 06:00 UTC
+          logic_rules: [MLR-005, MLR-006]
+          formula: "SUM(mrr - prev_mrr) where both > 0 and mrr > prev_mrr, both valued at the current planning rate"
+          consumers: [MRR waterfall, Account management dashboard]
+
+  - name: contraction_mrr
+    label: Contraction MRR
+    description: Month-over-month MRR decrease from accounts that are still paying. Reported as a positive number.
+    type: simple
+    type_params: {measure: contraction_mrr_usd}
+    config:
+      meta:
+        governance:
+          tier: 2
+          status: certified
+          version: "2.0.0"
+          domain: Recurring revenue
+          business_owner: VP Customer Success
+          data_steward: Analytics Engineering, Finance pod
+          certified_on: "2026-03-02"
+          next_review: "2027-03-02"
+          refresh: Daily 06:00 UTC
+          logic_rules: [MLR-005, MLR-006]
+          formula: "SUM(prev_mrr - mrr) where both > 0 and mrr < prev_mrr"
+          consumers: [MRR waterfall, Customer health dashboard]
+
+  - name: churned_mrr
+    label: Churned MRR
+    description: Previous-month MRR of accounts whose MRR fell to zero. Recorded in the month the contract ends, not the month a refund is paid.
+    type: simple
+    type_params: {measure: churned_mrr_usd}
+    config:
+      meta:
+        governance:
+          tier: 2
+          status: certified
+          version: "2.0.0"
+          domain: Recurring revenue
+          business_owner: VP Customer Success
+          data_steward: Analytics Engineering, Finance pod
+          certified_on: "2026-03-02"
+          next_review: "2027-03-02"
+          refresh: Daily 06:00 UTC
+          logic_rules: [MLR-001, MLR-005]
+          formula: "SUM(prev_mrr) where prev_mrr > 0 and mrr = 0"
+          consumers: [MRR waterfall, Customer health dashboard]
+
+  - name: reactivation_mrr
+    label: Reactivation MRR
+    description: MRR from previously churned accounts that start paying again. Kept separate from New MRR so win-backs do not inflate acquisition.
+    type: simple
+    type_params: {measure: reactivation_mrr_usd}
+    config:
+      meta:
+        governance:
+          tier: 2
+          status: certified
+          version: "2.0.0"
+          domain: Recurring revenue
+          business_owner: CRO (Revenue Operations)
+          data_steward: Analytics Engineering, Finance pod
+          certified_on: "2026-03-02"
+          next_review: "2027-03-02"
+          refresh: Daily 06:00 UTC
+          logic_rules: [MLR-005, MLR-016]
+          formula: "SUM(mrr) where prev_mrr = 0 and the account paid in any earlier month"
+          consumers: [MRR waterfall]
+
+  - name: net_new_mrr
+    label: Net New MRR
+    description: >
+      New + expansion + reactivation - contraction - churn. FX rebasing is excluded on purpose
+      (MLR-006), so closing MRR = opening MRR + FX rebase + net new MRR.
+    type: derived
+    type_params:
+      expr: new_mrr + expansion_mrr + reactivation_mrr - contraction_mrr - churned_mrr
+      metrics:
+        - name: new_mrr
+        - name: expansion_mrr
+        - name: reactivation_mrr
+        - name: contraction_mrr
+        - name: churned_mrr
+    config:
+      meta:
+        governance:
+          tier: 1
+          status: certified
+          version: "2.0.0"
+          domain: Recurring revenue
+          business_owner: VP Finance (FP&A)
+          data_steward: Analytics Engineering, Finance pod
+          certified_on: "2026-03-02"
+          next_review: "2027-03-02"
+          refresh: Daily 06:00 UTC
+          logic_rules: [MLR-005, MLR-006]
+          formula: "new_mrr + expansion_mrr + reactivation_mrr - contraction_mrr - churned_mrr"
+          consumers: [Board pack, MRR waterfall]
+
+  - name: saas_quick_ratio
+    label: SaaS Quick Ratio
+    description: (New + expansion + reactivation MRR) / (contraction + churned MRR). Growth efficiency; above 4 is strong.
+    type: derived
+    type_params:
+      expr: (new_mrr + expansion_mrr + reactivation_mrr) / nullif(contraction_mrr + churned_mrr, 0)
+      metrics:
+        - name: new_mrr
+        - name: expansion_mrr
+        - name: reactivation_mrr
+        - name: contraction_mrr
+        - name: churned_mrr
+    config:
+      meta:
+        governance:
+          tier: 3
+          status: beta
+          version: "0.2.0"
+          domain: Recurring revenue
+          business_owner: VP Finance (FP&A)
+          data_steward: Analytics Engineering, Finance pod
+          certified_on: null
+          next_review: "2026-12-01"
+          target_certification: "2027-Q1"
+          refresh: Daily 06:00 UTC
+          logic_rules: [MLR-005]
+          formula: "(new + expansion + reactivation) / (contraction + churn)"
+          consumers: [Finance sandbox]
+
+  # ======================================================================= customers + retention
+  - name: active_customers
+    label: Active Customers
+    description: Accounts with MRR > 0 at month end. Free-plan and test accounts are never customers.
+    type: simple
+    type_params: {measure: active_customer_count}
+    config:
+      meta:
+        governance:
+          tier: 1
+          status: certified
+          version: "1.3.0"
+          domain: Customers & retention
+          business_owner: VP Finance (FP&A)
+          data_steward: Analytics Engineering, Finance pod
+          certified_on: "2026-03-02"
+          next_review: "2027-03-02"
+          refresh: Daily 06:00 UTC
+          logic_rules: [MLR-005, MLR-010, MLR-016]
+          formula: "COUNT(accounts) where month-end mrr > 0"
+          consumers: [Board pack, Executive KPI dashboard]
+
+  - name: new_customers
+    label: New Customers
+    description: Accounts paying for the first time this month. Denominator of CAC.
+    type: simple
+    type_params: {measure: new_customer_count}
+    config:
+      meta:
+        governance:
+          tier: 2
+          status: certified
+          version: "1.3.0"
+          domain: Customers & retention
+          business_owner: CRO (Revenue Operations)
+          data_steward: Analytics Engineering, Finance pod
+          certified_on: "2026-03-02"
+          next_review: "2027-03-02"
+          refresh: Daily 06:00 UTC
+          logic_rules: [MLR-016]
+          formula: "COUNT(accounts) with movement_type = 'new'"
+          consumers: [Sales performance dashboard, CAC]
+
+  - name: churned_customers
+    label: Churned Customers
+    description: Accounts that were paying last month and are not paying this month.
+    type: simple
+    type_params: {measure: churned_customer_count}
+    config:
+      meta:
+        governance:
+          tier: 2
+          status: certified
+          version: "1.3.0"
+          domain: Customers & retention
+          business_owner: VP Customer Success
+          data_steward: Analytics Engineering, Finance pod
+          certified_on: "2026-03-02"
+          next_review: "2027-03-02"
+          refresh: Daily 06:00 UTC
+          logic_rules: [MLR-005]
+          formula: "COUNT(accounts) with movement_type = 'churn'"
+          consumers: [Customer health dashboard]
+
+  - name: logo_churn_rate
+    label: Logo Churn Rate (monthly)
+    description: >
+      Churned customers / customers at the start of the month. Queried at a coarser grain it
+      returns the customer-weighted AVERAGE MONTHLY rate (sum of churned / sum of starting
+      customers), never a compounded annual rate.
+    type: ratio
+    type_params:
+      numerator: churned_customers
+      denominator: starting_customers
+    config:
+      meta:
+        governance:
+          tier: 1
+          status: certified
+          version: "3.0.0"
+          domain: Customers & retention
+          business_owner: VP Customer Success
+          data_steward: Analytics Engineering, Finance pod
+          certified_on: "2026-03-02"
+          next_review: "2027-03-02"
+          refresh: Daily 06:00 UTC
+          logic_rules: [MLR-005, MLR-007]
+          formula: "churned_customers / customers paying at end of previous month"
+          consumers: [Board pack, Customer health dashboard, LTV]
+
+  - name: net_revenue_retention
+    label: Net Revenue Retention (NRR, trailing 12 months)
+    description: >
+      Current MRR of the accounts that were paying 12 months ago, divided by their MRR 12
+      months ago. Includes expansion, contraction, churn and win-backs inside the window;
+      excludes accounts acquired during the window.
+    type: ratio
+    type_params:
+      numerator: retention_cohort_current_mrr
+      denominator: retention_cohort_starting_mrr
+    config:
+      meta:
+        governance:
+          tier: 1
+          status: certified
+          version: "2.0.0"
+          domain: Customers & retention
+          business_owner: VP Customer Success
+          data_steward: Analytics Engineering, Finance pod
+          certified_on: "2026-04-15"
+          next_review: "2027-04-15"
+          refresh: Daily 06:00 UTC
+          logic_rules: [MLR-006, MLR-007]
+          formula: "SUM(cohort current MRR) / SUM(cohort MRR 12 months ago)"
+          consumers: [Board pack, Investor update, Customer health dashboard]
+
+  - name: gross_revenue_retention
+    label: Gross Revenue Retention (GRR, trailing 12 months)
+    description: Like NRR, but each account's current MRR is capped at its starting MRR, so expansion cannot hide churn. Always <= 100% and <= NRR.
+    type: ratio
+    type_params:
+      numerator: retention_cohort_retained_mrr
+      denominator: retention_cohort_starting_mrr
+    config:
+      meta:
+        governance:
+          tier: 1
+          status: certified
+          version: "2.0.0"
+          domain: Customers & retention
+          business_owner: VP Customer Success
+          data_steward: Analytics Engineering, Finance pod
+          certified_on: "2026-04-15"
+          next_review: "2027-04-15"
+          refresh: Daily 06:00 UTC
+          logic_rules: [MLR-006, MLR-007]
+          formula: "SUM(LEAST(current MRR, starting MRR)) / SUM(starting MRR)"
+          consumers: [Board pack, Investor update]
+
+  - name: arpa
+    label: Average Revenue per Account (ARPA)
+    description: MRR / active customers at month end.
+    type: ratio
+    type_params:
+      numerator: mrr
+      denominator: active_customers
+    config:
+      meta:
+        governance:
+          tier: 2
+          status: certified
+          version: "1.1.0"
+          domain: Customers & retention
+          business_owner: VP Finance (FP&A)
+          data_steward: Analytics Engineering, Finance pod
+          certified_on: "2026-03-02"
+          next_review: "2027-03-02"
+          refresh: Daily 06:00 UTC
+          logic_rules: [MLR-005, MLR-010]
+          formula: "mrr / active_customers"
+          consumers: [Pricing reviews, LTV]
+
+  - name: starting_customers
+    label: Starting Customers
+    description: Customers paying at the end of the previous month. Denominator of logo churn rate.
+    type: simple
+    type_params: {measure: starting_customer_count}
+    config:
+      meta:
+        governance:
+          tier: 3
+          status: certified
+          version: "1.0.0"
+          domain: Customers & retention
+          business_owner: VP Customer Success
+          data_steward: Analytics Engineering, Finance pod
+          certified_on: "2026-03-02"
+          next_review: "2027-03-02"
+          refresh: Daily 06:00 UTC
+          logic_rules: [MLR-005, MLR-007]
+          formula: "COUNT(accounts) with previous month-end mrr > 0"
+          consumers: [Logo churn rate]
+
+  - name: retention_cohort_starting_mrr
+    label: Retention Cohort Starting MRR
+    description: MRR twelve months ago of the accounts paying twelve months ago. Denominator of NRR and GRR.
+    type: simple
+    type_params: {measure: retention_starting_mrr_usd}
+    config:
+      meta:
+        governance:
+          tier: 3
+          status: certified
+          version: "1.0.0"
+          domain: Customers & retention
+          business_owner: VP Customer Success
+          data_steward: Analytics Engineering, Finance pod
+          certified_on: "2026-04-15"
+          next_review: "2027-04-15"
+          refresh: Daily 06:00 UTC
+          logic_rules: [MLR-006, MLR-007]
+          formula: "SUM(cohort MRR at M-12, valued at month M planning rate)"
+          consumers: [NRR, GRR]
+
+  - name: retention_cohort_current_mrr
+    label: Retention Cohort Current MRR
+    description: Current MRR of the accounts that were paying twelve months ago. Numerator of NRR.
+    type: simple
+    type_params: {measure: retention_current_mrr_usd}
+    config:
+      meta:
+        governance:
+          tier: 3
+          status: certified
+          version: "1.0.0"
+          domain: Customers & retention
+          business_owner: VP Customer Success
+          data_steward: Analytics Engineering, Finance pod
+          certified_on: "2026-04-15"
+          next_review: "2027-04-15"
+          refresh: Daily 06:00 UTC
+          logic_rules: [MLR-006, MLR-007]
+          formula: "SUM(cohort MRR at month M)"
+          consumers: [NRR]
+
+  - name: retention_cohort_retained_mrr
+    label: Retention Cohort Retained MRR (capped)
+    description: Current cohort MRR with each account capped at its starting MRR. Numerator of GRR.
+    type: simple
+    type_params: {measure: retention_retained_capped_mrr_usd}
+    config:
+      meta:
+        governance:
+          tier: 3
+          status: certified
+          version: "1.0.0"
+          domain: Customers & retention
+          business_owner: VP Customer Success
+          data_steward: Analytics Engineering, Finance pod
+          certified_on: "2026-04-15"
+          next_review: "2027-04-15"
+          refresh: Daily 06:00 UTC
+          logic_rules: [MLR-006, MLR-007]
+          formula: "SUM(LEAST(current MRR, starting MRR))"
+          consumers: [GRR]
+
+  # ======================================================================= revenue + margin
+  - name: net_revenue
+    label: Net Revenue (recognised)
+    description: >
+      Recognised revenue: ratable recurring revenue + onboarding services + usage overage,
+      minus service credits, at actual FX rates. Annual prepayments are spread over the term.
+      Refunds reduce revenue only when they are concessions (service credits).
+    type: simple
+    type_params: {measure: net_revenue_usd}
+    config:
+      meta:
+        governance:
+          tier: 1
+          status: certified
+          version: "1.0.0"
+          domain: Revenue & margin
+          business_owner: Corporate Controller
+          data_steward: Analytics Engineering, Finance pod
+          certified_on: "2026-01-12"
+          next_review: "2027-01-12"
+          refresh: Daily 06:00 UTC; a month locks on business day 5 after close
+          logic_rules: [MLR-001, MLR-002, MLR-003, MLR-004, MLR-006]
+          formula: "recognised recurring + non-recurring - service credits (actual FX)"
+          consumers: [Board pack, Gross margin, Executive KPI dashboard]
+
+  - name: cogs
+    label: Cost of Goods Sold
+    description: Hosting, customer support and third-party API costs.
+    type: simple
+    type_params: {measure: cogs_usd}
+    config:
+      meta:
+        governance:
+          tier: 3
+          status: certified
+          version: "1.0.0"
+          domain: Revenue & margin
+          business_owner: Corporate Controller
+          data_steward: Analytics Engineering, Finance pod
+          certified_on: "2026-01-12"
+          next_review: "2027-01-12"
+          refresh: Monthly, after close
+          logic_rules: [MLR-004]
+          formula: "SUM(cost lines where cost_type = 'cogs')"
+          consumers: [Gross margin]
+
+  - name: gross_margin_pct
+    label: Gross Margin %
+    description: (Net revenue - COGS) / net revenue.
+    type: derived
+    type_params:
+      expr: (net_revenue - cogs) / nullif(net_revenue, 0)
+      metrics:
+        - name: net_revenue
+        - name: cogs
+    config:
+      meta:
+        governance:
+          tier: 1
+          status: certified
+          version: "1.0.0"
+          domain: Revenue & margin
+          business_owner: CFO
+          data_steward: Analytics Engineering, Finance pod
+          certified_on: "2026-01-12"
+          next_review: "2027-01-12"
+          refresh: Monthly, after close
+          logic_rules: [MLR-002, MLR-004]
+          formula: "(net_revenue - cogs) / net_revenue"
+          consumers: [Board pack, CAC payback, LTV]
+
+  - name: total_revenue_legacy
+    label: Total Revenue (legacy) - DEPRECATED
+    description: >
+      DEPRECATED. Sum of non-void invoice amounts. It counts annual prepayments in the invoice
+      month and ignores refunds, so it spikes in renewal months and overstates revenue. Use
+      net_revenue for revenue and net_billings in Finance tools for cash.
+    type: simple
+    type_params: {measure: gross_billings_usd}
+    config:
+      meta:
+        governance:
+          tier: 2
+          status: deprecated
+          version: "1.4.0"
+          domain: Revenue & margin
+          business_owner: Corporate Controller
+          data_steward: Analytics Engineering, Finance pod
+          certified_on: "2024-02-01"
+          next_review: null
+          deprecated_on: "2026-07-01"
+          sunset_on: "2026-12-31"
+          replaced_by: net_revenue
+          refresh: Daily 06:00 UTC (frozen at sunset)
+          logic_rules: []
+          formula: "SUM(invoice amount) where status <> 'void'"
+          consumers: [Legacy Sales Ops dashboard (migration ticket METRIC-112)]
+
+  # ======================================================================= unit economics
+  - name: acquisition_cost
+    label: Customer Acquisition Spend
+    description: Sales & marketing spend aimed at winning new logos. Excludes Customer Success and other retention costs.
+    type: simple
+    type_params: {measure: acquisition_cost_usd}
+    config:
+      meta:
+        governance:
+          tier: 3
+          status: certified
+          version: "1.1.0"
+          domain: Unit economics
+          business_owner: CFO
+          data_steward: Analytics Engineering, Finance pod
+          certified_on: "2026-02-09"
+          next_review: "2027-02-09"
+          refresh: Monthly, after close
+          logic_rules: [MLR-012]
+          formula: "SUM(cost lines where cost_type = 'acquisition')"
+          consumers: [CAC]
+
+  - name: cac
+    label: Customer Acquisition Cost (blended)
+    description: Acquisition spend / new customers. Blended across channels; at quarter grain this is quarter spend / quarter new logos.
+    type: derived
+    type_params:
+      expr: acquisition_cost / nullif(new_customers, 0)
+      metrics:
+        - name: acquisition_cost
+        - name: new_customers
+    config:
+      meta:
+        governance:
+          tier: 1
+          status: certified
+          version: "1.1.0"
+          domain: Unit economics
+          business_owner: CFO
+          data_steward: Analytics Engineering, Finance pod
+          certified_on: "2026-02-09"
+          next_review: "2027-02-09"
+          refresh: Monthly, after close
+          logic_rules: [MLR-012, MLR-013, MLR-016]
+          formula: "acquisition_cost / new_customers"
+          known_limitations: "Channel-level CAC is not certified yet: spend is tagged by channel, accounts by acquisition channel, and the two taxonomies are being reconciled (METRIC-140)."
+          consumers: [Board pack, Marketing efficiency dashboard]
+
+  - name: new_customer_arpa
+    label: New-Customer ARPA
+    description: New MRR / new customers. Component of CAC payback.
+    type: derived
+    type_params:
+      expr: new_mrr / nullif(new_customers, 0)
+      metrics:
+        - name: new_mrr
+        - name: new_customers
+    config:
+      meta:
+        governance:
+          tier: 3
+          status: certified
+          version: "1.0.0"
+          domain: Unit economics
+          business_owner: CFO
+          data_steward: Analytics Engineering, Finance pod
+          certified_on: "2026-02-09"
+          next_review: "2027-02-09"
+          refresh: Daily 06:00 UTC
+          logic_rules: [MLR-016]
+          formula: "new_mrr / new_customers"
+          consumers: [CAC payback]
+
+  - name: cac_payback_months
+    label: CAC Payback (months)
+    description: Months of gross-margin-adjusted new-customer MRR needed to recover CAC.
+    type: derived
+    type_params:
+      expr: cac / nullif(new_customer_arpa * gross_margin_pct, 0)
+      metrics:
+        - name: cac
+        - name: new_customer_arpa
+        - name: gross_margin_pct
+    config:
+      meta:
+        governance:
+          tier: 1
+          status: certified
+          version: "1.0.0"
+          domain: Unit economics
+          business_owner: CFO
+          data_steward: Analytics Engineering, Finance pod
+          certified_on: "2026-02-09"
+          next_review: "2027-02-09"
+          refresh: Monthly, after close
+          logic_rules: [MLR-012, MLR-013]
+          formula: "cac / (new_customer_arpa x gross_margin_pct)"
+          consumers: [Board pack, Marketing efficiency dashboard]
+
+  - name: ltv
+    label: Customer Lifetime Value (LTV)
+    description: >
+      ARPA x trailing-3-month gross margin % x expected lifetime, where lifetime = 1 / trailing
+      6-month average monthly logo churn, capped at 60 months. Point-in-time: a quarter query
+      returns the quarter-end value.
+    type: simple
+    type_params: {measure: ltv_usd}
+    config:
+      meta:
+        governance:
+          tier: 1
+          status: certified
+          version: "2.0.0"
+          domain: Unit economics
+          business_owner: CFO
+          data_steward: Analytics Engineering, Finance pod
+          certified_on: "2026-04-15"
+          next_review: "2027-04-15"
+          refresh: Monthly, after close
+          logic_rules: [MLR-013, MLR-014]
+          formula: "arpa x gross_margin_pct_t3m x MIN(1 / logo_churn_rate_t6m, 60)"
+          consumers: [Board pack, Investor update]
+
+  - name: ltv_to_cac
+    label: LTV to CAC Ratio
+    description: LTV / trailing-3-month blended CAC. Point-in-time, quarter queries return the quarter-end value.
+    type: simple
+    type_params: {measure: ltv_to_cac_ratio}
+    config:
+      meta:
+        governance:
+          tier: 1
+          status: certified
+          version: "2.0.0"
+          domain: Unit economics
+          business_owner: CFO
+          data_steward: Analytics Engineering, Finance pod
+          certified_on: "2026-04-15"
+          next_review: "2027-04-15"
+          refresh: Monthly, after close
+          logic_rules: [MLR-012, MLR-013, MLR-014]
+          formula: "ltv / cac_t3m"
+          consumers: [Board pack, Investor update]
+
+  # ======================================================================= product engagement
+  - name: dau
+    label: Daily Active Users (DAU)
+    description: >
+      Distinct users with at least one qualifying event on their LOCAL calendar day. Rolled up
+      to a week or month it returns the average daily value.
+    type: simple
+    type_params: {measure: average_dau}
+    config:
+      meta:
+        governance:
+          tier: 2
+          status: certified
+          version: "2.0.0"
+          domain: Product engagement
+          business_owner: Head of Product Analytics
+          data_steward: Analytics Engineering, Product pod
+          certified_on: "2026-05-04"
+          next_review: "2027-05-04"
+          refresh: Hourly
+          logic_rules: [MLR-008, MLR-009, MLR-010, MLR-011]
+          formula: "AVG over days of COUNT(DISTINCT user_id with a qualifying event on local date)"
+          consumers: [Product health dashboard, Embedded customer usage page]
+
+  - name: mau
+    label: Monthly Active Users (rolling 28-day)
+    description: Distinct users with a qualifying event in the 28 local days ending on the date. A month query returns the value on the month's last day.
+    type: cumulative
+    type_params:
+      measure: active_users
+      cumulative_type_params:
+        window: 28 days
+        period_agg: last
+    config:
+      meta:
+        governance:
+          tier: 1
+          status: certified
+          version: "2.0.0"
+          domain: Product engagement
+          business_owner: Head of Product Analytics
+          data_steward: Analytics Engineering, Product pod
+          certified_on: "2026-05-04"
+          next_review: "2027-05-04"
+          refresh: Hourly
+          logic_rules: [MLR-008, MLR-009, MLR-010, MLR-011, MLR-015]
+          formula: "COUNT(DISTINCT user_id) over local dates d-27 .. d"
+          consumers: [Board pack, Product health dashboard]
+
+  - name: stickiness
+    label: Stickiness (DAU / MAU)
+    description: Average DAU over the period / 28-day MAU at period end. At day grain it is exactly DAU / MAU for that day.
+    type: derived
+    type_params:
+      expr: dau / nullif(mau, 0)
+      metrics:
+        - name: dau
+        - name: mau
+    config:
+      meta:
+        governance:
+          tier: 2
+          status: certified
+          version: "2.0.0"
+          domain: Product engagement
+          business_owner: Head of Product Analytics
+          data_steward: Analytics Engineering, Product pod
+          certified_on: "2026-05-04"
+          next_review: "2027-05-04"
+          refresh: Hourly
+          logic_rules: [MLR-008, MLR-015]
+          formula: "dau / mau"
+          consumers: [Product health dashboard]

@@ -1,0 +1,259 @@
+# MetricFlow semantic models. Dimensions, measures and join keys are defined ONCE here,
+# so Tableau, Power BI, notebooks and the embedded app all inherit the same logic through
+# the dbt Semantic Layer APIs instead of re-implementing it in each tool.
+version: 2
+
+semantic_models:
+  # ------------------------------------------------------------------ conformed dimension
+  - name: accounts
+    description: Reportable (non-test) accounts. Supplies segment / region / channel to every fact.
+    model: ref('dim_accounts')
+    entities:
+      - name: account
+        type: primary
+        expr: account_id
+    dimensions:
+      - name: segment
+        type: categorical
+      - name: region
+        type: categorical
+      - name: acquisition_channel
+        type: categorical
+      - name: billing_currency
+        type: categorical
+      - name: customer_status
+        type: categorical
+      - name: signup_month
+        type: time
+        type_params: {time_granularity: month}
+
+  # ------------------------------------------------------------------ MRR snapshot + movements
+  - name: mrr_snapshots
+    description: Account x month-end MRR snapshot and movement classification (fct_mrr).
+    model: ref('fct_mrr')
+    defaults:
+      agg_time_dimension: mrr_month
+    entities:
+      - name: account_month
+        type: primary
+        expr: account_month_id
+      - name: account
+        type: foreign
+        expr: account_id
+    dimensions:
+      - name: mrr_month
+        type: time
+        expr: month_start
+        type_params: {time_granularity: month}
+      - name: movement_type
+        type: categorical
+      - name: billing_interval
+        type: categorical
+      - name: plan_id
+        type: categorical
+    measures:
+      # Balances are SEMI-ADDITIVE: summing across accounts is valid, summing across months is not.
+      # non_additive_dimension makes a quarter/year query return the period-END balance.
+      - name: mrr_usd
+        description: Month-end contracted MRR, constant currency.
+        agg: sum
+        non_additive_dimension: {name: mrr_month, window_choice: max}
+      - name: arr_usd
+        agg: sum
+        non_additive_dimension: {name: mrr_month, window_choice: max}
+      - name: active_customer_count
+        agg: sum
+        non_additive_dimension: {name: mrr_month, window_choice: max}
+      # Flows are fully additive across time.
+      - name: new_mrr_usd
+        agg: sum
+      - name: expansion_mrr_usd
+        agg: sum
+      - name: contraction_mrr_usd
+        agg: sum
+      - name: churned_mrr_usd
+        agg: sum
+      - name: reactivation_mrr_usd
+        agg: sum
+      - name: fx_rebase_mrr_usd
+        agg: sum
+      - name: new_customer_count
+        agg: sum
+      - name: churned_customer_count
+        agg: sum
+      - name: reactivated_customer_count
+        agg: sum
+      - name: starting_customer_count
+        description: Customers paying at the end of the previous month (the churn-rate denominator).
+        agg: sum
+
+  # ------------------------------------------------------------------ retention cohorts
+  - name: retention_cohorts
+    description: Trailing-12-month cohort rows (fct_retention_12m) for NRR / GRR.
+    model: ref('fct_retention_12m')
+    defaults:
+      agg_time_dimension: as_of_month
+    entities:
+      - name: retention_row
+        type: primary
+        expr: retention_row_id
+      - name: account
+        type: foreign
+        expr: account_id
+    dimensions:
+      - name: as_of_month
+        type: time
+        type_params: {time_granularity: month}
+    measures:
+      - name: retention_starting_mrr_usd
+        expr: starting_mrr_usd
+        agg: sum
+        non_additive_dimension: {name: as_of_month, window_choice: max}
+      - name: retention_current_mrr_usd
+        expr: current_mrr_usd
+        agg: sum
+        non_additive_dimension: {name: as_of_month, window_choice: max}
+      - name: retention_retained_capped_mrr_usd
+        expr: retained_mrr_capped_usd
+        agg: sum
+        non_additive_dimension: {name: as_of_month, window_choice: max}
+
+  # ------------------------------------------------------------------ revenue
+  - name: revenue
+    description: Recognised revenue and billings by account-month (fct_revenue_monthly).
+    model: ref('fct_revenue_monthly')
+    defaults:
+      agg_time_dimension: revenue_month
+    entities:
+      - name: revenue_row
+        type: primary
+        expr: account_month_id
+      - name: account
+        type: foreign
+        expr: account_id
+    dimensions:
+      - name: revenue_month
+        type: time
+        expr: month_start
+        type_params: {time_granularity: month}
+    measures:
+      - name: net_revenue_usd
+        agg: sum
+      - name: recognized_recurring_revenue_usd
+        agg: sum
+      - name: non_recurring_revenue_usd
+        agg: sum
+      - name: service_credits_usd
+        agg: sum
+      - name: gross_billings_usd
+        agg: sum
+      - name: net_billings_usd
+        agg: sum
+
+  # ------------------------------------------------------------------ costs
+  - name: company_costs
+    description: COGS, acquisition and retention cost lines (fct_company_costs_monthly). No account grain.
+    model: ref('fct_company_costs_monthly')
+    defaults:
+      agg_time_dimension: cost_month
+    entities:
+      - name: cost_line
+        type: primary
+        expr: cost_line_id
+    dimensions:
+      - name: cost_month
+        type: time
+        expr: month_start
+        type_params: {time_granularity: month}
+      - name: cost_type
+        type: categorical
+      - name: cost_channel
+        type: categorical
+        expr: channel
+      - name: cost_category
+        type: categorical
+    measures:
+      - name: cogs_usd
+        expr: "case when cost_type = 'cogs' then amount_usd else 0 end"
+        agg: sum
+      - name: acquisition_cost_usd
+        description: Sales & marketing acquisition spend only. Customer Success is excluded (MLR-012).
+        expr: "case when cost_type = 'acquisition' then amount_usd else 0 end"
+        agg: sum
+
+  # ------------------------------------------------------------------ unit economics (pre-windowed)
+  - name: unit_economics
+    description: >
+      Company-level LTV and LTV:CAC from fct_unit_economics_monthly. These depend on trailing
+      windows, so they are computed in the mart and exposed as point-in-time values: a quarter
+      query returns the quarter-END month, never a sum or an average of ratios.
+    model: ref('fct_unit_economics_monthly')
+    defaults:
+      agg_time_dimension: unit_economics_month
+    entities:
+      - name: unit_economics_month_key
+        type: primary
+        expr: month_start
+    dimensions:
+      - name: unit_economics_month
+        type: time
+        expr: month_start
+        type_params: {time_granularity: month}
+      - name: is_window_complete
+        type: categorical
+    measures:
+      - name: ltv_usd
+        agg: max
+        non_additive_dimension: {name: unit_economics_month, window_choice: max}
+      - name: ltv_to_cac_ratio
+        agg: max
+        non_additive_dimension: {name: unit_economics_month, window_choice: max}
+
+  # ------------------------------------------------------------------ product engagement
+  - name: user_activity
+    description: User x local-day qualifying activity (fct_user_activity_daily).
+    model: ref('fct_user_activity_daily')
+    defaults:
+      agg_time_dimension: activity_date
+    entities:
+      - name: user_day
+        type: primary
+        expr: user_day_id
+      - name: user
+        type: foreign
+        expr: user_id
+      - name: account
+        type: foreign
+        expr: account_id
+    dimensions:
+      - name: activity_date
+        type: time
+        type_params: {time_granularity: day}
+    measures:
+      - name: active_users
+        description: Distinct users with at least one qualifying event in the period.
+        expr: user_id
+        agg: count_distinct
+      - name: qualifying_events
+        expr: qualifying_event_count
+        agg: sum
+
+  - name: engagement_daily
+    description: Company-level daily DAU (fct_engagement_daily), averaged when rolled up.
+    model: ref('fct_engagement_daily')
+    defaults:
+      agg_time_dimension: engagement_date
+    entities:
+      - name: engagement_day
+        type: primary
+        expr: metric_date
+    dimensions:
+      - name: engagement_date
+        type: time
+        expr: metric_date
+        type_params: {time_granularity: day}
+    measures:
+      - name: average_dau
+        description: Average of daily DAU over the queried period (a month query = mean DAU of that month).
+        expr: dau
+        agg: average

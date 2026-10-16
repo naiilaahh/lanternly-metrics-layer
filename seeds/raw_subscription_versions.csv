@@ -1,0 +1,915 @@
+subscription_id,version_number,account_id,plan_id,billing_interval,seats,currency,unit_price_local,discount_pct,mrr_local,valid_from,valid_to,change_reason
+sub_000001,1,acc_00001,pln_starter,year,3,USD,24.65,0,73.95,2025-01-04 21:47:00,,new
+sub_000002,1,acc_00002,pln_starter,month,6,USD,29,0,174,2025-01-13 08:59:00,2026-09-24 23:16:00,new
+sub_000003,1,acc_00003,pln_starter,month,12,GBP,23,0,276,2025-01-18 04:08:00,2025-06-18 07:37:00,new
+sub_000003,2,acc_00003,pln_growth,month,12,GBP,47,0,564,2025-06-18 07:37:00,,plan_upgrade
+sub_000004,1,acc_00004,pln_starter,month,3,USD,29,0.1,78.3,2025-01-10 06:03:00,2026-02-20 18:06:00,new
+sub_000005,1,acc_00005,pln_free,month,9,EUR,0,0,0,2025-01-28 08:32:00,2025-08-03 22:57:00,free_signup
+sub_000006,1,acc_00005,pln_starter,month,9,EUR,27,0,243,2025-08-03 22:57:00,,free_to_paid
+sub_000007,1,acc_00006,pln_growth,month,29,USD,59,0,1711,2025-01-31 08:22:00,2025-06-30 17:43:00,new
+sub_000008,1,acc_00007,pln_starter,month,11,USD,29,0,319,2025-01-13 21:47:00,2025-11-08 15:39:00,new
+sub_000009,1,acc_00008,pln_starter,month,10,USD,29,0,290,2025-01-29 14:39:00,2026-01-29 18:24:00,new
+sub_000009,2,acc_00008,pln_starter,month,15,USD,29,0,435,2026-01-29 18:24:00,,seat_expansion
+sub_000010,1,acc_00009,pln_enterprise,year,158,USD,84.15,0.1,11966.13,2025-01-21 01:48:00,2025-05-10 18:43:00,new
+sub_000010,2,acc_00009,pln_enterprise,year,232,USD,84.15,0.1,17570.52,2025-05-10 18:43:00,2026-06-28 10:11:00,seat_expansion
+sub_000010,3,acc_00009,pln_enterprise,year,301,USD,84.15,0.1,22796.24,2026-06-28 10:11:00,,seat_expansion
+sub_000011,1,acc_00010,pln_starter,month,11,EUR,27,0,297,2025-01-03 09:14:00,2026-01-10 22:08:00,new
+sub_000011,2,acc_00010,pln_starter,month,9,EUR,27,0,243,2026-01-10 22:08:00,2026-03-10 15:30:00,seat_contraction
+sub_000012,1,acc_00011,pln_starter,month,6,USD,29,0,174,2025-01-20 01:39:00,2025-02-15 22:38:00,new
+sub_000012,2,acc_00011,pln_starter,month,7,USD,29,0,203,2025-02-15 22:38:00,2026-06-08 21:53:00,seat_expansion
+sub_000012,3,acc_00011,pln_starter,month,10,USD,29,0,290,2026-06-08 21:53:00,2026-07-25 21:52:00,seat_expansion
+sub_000013,1,acc_00011,pln_starter,month,5,USD,29,0,145,2026-09-25 05:30:00,,reactivation
+sub_000014,1,acc_00012,pln_growth,month,71,GBP,47,0,3337,2025-01-18 14:26:00,2025-03-21 19:51:00,new
+sub_000014,2,acc_00012,pln_enterprise,month,71,GBP,79,0,5609,2025-03-21 19:51:00,2026-04-24 15:45:00,plan_upgrade
+sub_000014,3,acc_00012,pln_enterprise,month,105,GBP,79,0,8295,2026-04-24 15:45:00,2026-09-05 13:55:00,seat_expansion
+sub_000015,1,acc_00013,pln_growth,year,22,USD,50.15,0,1103.3,2025-01-23 03:28:00,2026-01-23 03:28:00,new
+sub_000016,1,acc_00013,pln_growth,month,21,USD,59,0,1239,2026-04-28 21:49:00,,reactivation
+sub_000017,1,acc_00014,pln_growth,month,52,USD,59,0,3068,2025-01-29 11:33:00,2025-12-02 09:31:00,new
+sub_000017,2,acc_00014,pln_enterprise,month,52,USD,99,0,5148,2025-12-02 09:31:00,,plan_upgrade
+sub_000018,1,acc_00015,pln_starter,month,4,USD,29,0,116,2025-01-01 05:16:00,,new
+sub_000019,1,acc_00016,pln_starter,month,15,EUR,27,0,405,2025-01-16 07:54:00,2025-04-30 21:53:00,new
+sub_000020,1,acc_00016,pln_starter,month,11,EUR,27,0,297,2025-06-09 22:48:00,2025-07-28 04:36:00,reactivation
+sub_000020,2,acc_00016,pln_starter,month,13,EUR,27,0,351,2025-07-28 04:36:00,,seat_expansion
+sub_000021,1,acc_00017,pln_starter,month,15,USD,29,0,435,2025-01-23 20:26:00,,new
+sub_000022,1,acc_00018,pln_starter,month,11,EUR,27,0,297,2025-02-03 16:41:00,2025-04-21 20:21:00,new
+sub_000022,2,acc_00018,pln_starter,month,7,EUR,27,0,189,2025-04-21 20:21:00,,seat_contraction
+sub_000023,1,acc_00019,pln_starter,month,12,USD,29,0,348,2025-02-08 09:51:00,,new
+sub_000024,1,acc_00020,pln_starter,year,8,USD,24.65,0.1,177.48,2025-02-12 07:36:00,2025-03-28 15:02:00,new
+sub_000024,2,acc_00020,pln_starter,year,12,USD,24.65,0.1,266.22,2025-03-28 15:02:00,2025-04-26 02:22:00,seat_expansion
+sub_000024,3,acc_00020,pln_growth,year,12,USD,50.15,0.1,541.62,2025-04-26 02:22:00,2026-05-21 06:18:00,plan_upgrade
+sub_000024,4,acc_00020,pln_growth,year,17,USD,50.15,0.1,767.29,2026-05-21 06:18:00,,seat_expansion
+sub_000025,1,acc_00021,pln_starter,year,4,USD,24.65,0,98.6,2025-02-24 13:05:00,2025-12-03 07:49:00,new
+sub_000025,2,acc_00021,pln_starter,year,5,USD,24.65,0,123.25,2025-12-03 07:49:00,2026-01-05 21:28:00,seat_expansion
+sub_000025,3,acc_00021,pln_starter,year,7,USD,24.65,0,172.55,2026-01-05 21:28:00,,seat_expansion
+sub_000026,1,acc_00022,pln_starter,month,4,USD,29,0,116,2025-02-23 14:05:00,2025-07-18 18:23:00,new
+sub_000026,2,acc_00022,pln_starter,month,6,USD,29,0,174,2025-07-18 18:23:00,,seat_expansion
+sub_000027,1,acc_00023,pln_enterprise,year,234,EUR,78.2,0.1,16468.92,2025-02-25 18:26:00,,new
+sub_000028,1,acc_00024,pln_enterprise,year,99,USD,84.15,0,8330.85,2025-02-12 04:12:00,2025-09-16 08:41:00,new
+sub_000028,2,acc_00024,pln_enterprise,year,140,USD,84.15,0,11781.0,2025-09-16 08:41:00,2026-02-12 04:12:00,seat_expansion
+sub_000029,1,acc_00025,pln_starter,month,8,USD,29,0,232,2025-02-22 15:33:00,,new
+sub_000030,1,acc_00026,pln_enterprise,year,84,USD,84.15,0.2,5654.88,2025-02-02 12:50:00,2025-07-11 09:36:00,new
+sub_000030,2,acc_00026,pln_enterprise,year,116,USD,84.15,0.2,7809.12,2025-07-11 09:36:00,2025-11-13 07:28:00,seat_expansion
+sub_000030,3,acc_00026,pln_enterprise,year,163,USD,84.15,0.2,10973.16,2025-11-13 07:28:00,,seat_expansion
+sub_000031,1,acc_00027,pln_starter,month,11,USD,29,0,319,2025-02-28 16:28:00,2025-03-05 10:00:00,new
+sub_000031,2,acc_00027,pln_starter,month,16,USD,29,0,464,2025-03-05 10:00:00,2025-03-20 10:00:00,seat_expansion
+sub_000031,3,acc_00027,pln_starter,month,11,USD,29,0,319,2025-03-20 10:00:00,2025-07-12 22:04:00,seat_contraction
+sub_000031,4,acc_00027,pln_starter,month,8,USD,29,0,232,2025-07-12 22:04:00,,seat_contraction
+sub_000032,1,acc_00028,pln_starter,month,12,USD,29,0,348,2025-02-07 01:08:00,2026-03-05 10:00:00,new
+sub_000032,2,acc_00028,pln_starter,month,17,USD,29,0,493,2026-03-05 10:00:00,2026-03-20 10:00:00,seat_expansion
+sub_000032,3,acc_00028,pln_starter,month,12,USD,29,0,348,2026-03-20 10:00:00,2026-09-13 21:38:00,seat_contraction
+sub_000032,4,acc_00028,pln_starter,month,9,USD,29,0,261,2026-09-13 21:38:00,,seat_contraction
+sub_000033,1,acc_00029,pln_starter,month,8,USD,29,0,232,2025-02-16 14:06:00,2026-03-05 10:00:00,new
+sub_000033,2,acc_00029,pln_starter,month,13,USD,29,0,377,2026-03-05 10:00:00,2026-03-20 10:00:00,seat_expansion
+sub_000033,3,acc_00029,pln_starter,month,8,USD,29,0,232,2026-03-20 10:00:00,2026-08-17 14:23:00,seat_contraction
+sub_000033,4,acc_00029,pln_growth,month,8,USD,59,0,472,2026-08-17 14:23:00,,plan_upgrade
+sub_000034,1,acc_00030,pln_starter,month,9,USD,29,0.1,234.9,2025-02-27 02:41:00,2026-01-07 18:09:00,new
+sub_000034,2,acc_00030,pln_starter,month,13,USD,29,0.1,339.3,2026-01-07 18:09:00,,seat_expansion
+sub_000035,1,acc_00031,pln_growth,year,31,EUR,46.75,0.1,1304.33,2025-02-04 02:00:00,,new
+sub_000036,1,acc_00032,pln_growth,month,34,USD,59,0.1,1805.4,2025-02-03 13:43:00,2026-07-23 03:01:00,new
+sub_000036,2,acc_00032,pln_growth,month,47,USD,59,0.1,2495.7,2026-07-23 03:01:00,,seat_expansion
+sub_000037,1,acc_00033,pln_starter,month,14,USD,29,0.1,365.4,2025-02-20 12:37:00,,new
+sub_000038,1,acc_00034,pln_starter,year,12,USD,24.65,0,295.8,2025-03-24 18:44:00,,new
+sub_000039,1,acc_00035,pln_growth,month,69,GBP,47,0.1,2918.7,2025-03-15 20:42:00,2025-06-04 20:50:00,new
+sub_000039,2,acc_00035,pln_growth,month,77,GBP,47,0.1,3257.1,2025-06-04 20:50:00,2026-03-11 03:55:00,seat_expansion
+sub_000039,3,acc_00035,pln_growth,month,89,GBP,47,0.1,3764.7,2026-03-11 03:55:00,2026-07-21 05:28:00,seat_expansion
+sub_000039,4,acc_00035,pln_growth,month,106,GBP,47,0.1,4483.8,2026-07-21 05:28:00,,seat_expansion
+sub_000040,1,acc_00036,pln_growth,year,55,EUR,46.75,0.2,2057.0,2025-03-04 07:31:00,2026-03-05 22:00:00,new
+sub_000040,2,acc_00036,pln_enterprise,year,55,EUR,78.2,0.2,3440.8,2026-03-05 22:00:00,,plan_upgrade
+sub_000041,1,acc_00037,pln_starter,year,6,USD,24.65,0,147.9,2025-03-22 23:07:00,,new
+sub_000042,1,acc_00038,pln_starter,month,11,GBP,23,0,253,2025-03-01 21:24:00,,new
+sub_000043,1,acc_00039,pln_growth,month,62,USD,59,0,3658,2025-03-26 04:07:00,,new
+sub_000044,1,acc_00040,pln_enterprise,year,349,USD,84.15,0,29368.35,2025-03-06 15:02:00,2025-05-05 18:45:00,new
+sub_000044,2,acc_00040,pln_enterprise,year,512,USD,84.15,0,43084.8,2025-05-05 18:45:00,2026-04-20 10:58:00,seat_expansion
+sub_000044,3,acc_00040,pln_enterprise,year,729,USD,84.15,0,61345.35,2026-04-20 10:58:00,2026-09-07 07:44:00,seat_expansion
+sub_000044,4,acc_00040,pln_enterprise,year,822,USD,84.15,0,69171.3,2026-09-07 07:44:00,,seat_expansion
+sub_000045,1,acc_00041,pln_starter,year,10,USD,24.65,0,246.5,2025-03-13 03:53:00,2025-09-21 05:38:00,new
+sub_000045,2,acc_00041,pln_starter,year,12,USD,24.65,0,295.8,2025-09-21 05:38:00,2026-07-06 20:18:00,seat_expansion
+sub_000045,3,acc_00041,pln_starter,year,16,USD,24.65,0,394.4,2026-07-06 20:18:00,,seat_expansion
+sub_000046,1,acc_00042,pln_free,month,3,USD,0,0,0,2025-03-15 01:16:00,,free_signup
+sub_000047,1,acc_00043,pln_growth,year,20,EUR,46.75,0.1,841.5,2025-03-25 14:11:00,2026-05-16 08:57:00,new
+sub_000047,2,acc_00043,pln_growth,year,25,EUR,46.75,0.1,1051.88,2026-05-16 08:57:00,,seat_expansion
+sub_000048,1,acc_00044,pln_enterprise,year,339,USD,84.15,0.2,22821.48,2025-03-28 11:52:00,2026-03-28 11:52:00,new
+sub_000049,1,acc_00044,pln_enterprise,month,363,USD,99,0,35937,2026-07-09 19:51:00,,reactivation
+sub_000050,1,acc_00045,pln_starter,month,7,USD,29,0,203,2025-03-20 19:18:00,,new
+sub_000051,1,acc_00046,pln_starter,year,14,USD,24.65,0,345.1,2025-03-05 04:12:00,2025-11-07 23:23:00,new
+sub_000051,2,acc_00046,pln_starter,year,21,USD,24.65,0,517.65,2025-11-07 23:23:00,2026-01-24 07:14:00,seat_expansion
+sub_000051,3,acc_00046,pln_starter,year,26,USD,24.65,0,640.9,2026-01-24 07:14:00,,seat_expansion
+sub_000052,1,acc_00047,pln_starter,month,13,USD,29,0.1,339.3,2025-03-01 18:32:00,2025-05-04 13:28:00,new
+sub_000052,2,acc_00047,pln_starter,month,10,USD,29,0.1,261.0,2025-05-04 13:28:00,2026-08-22 02:58:00,seat_contraction
+sub_000052,3,acc_00047,pln_growth,month,10,USD,59,0.1,531.0,2026-08-22 02:58:00,,plan_upgrade
+sub_000053,1,acc_00048,pln_starter,month,9,USD,29,0,261,2025-03-09 23:05:00,2026-05-28 21:33:00,new
+sub_000054,1,acc_00049,pln_free,month,13,EUR,0,0,0,2025-03-03 15:20:00,2025-11-13 13:02:00,free_signup
+sub_000055,1,acc_00049,pln_starter,month,13,EUR,27,0,351,2025-11-13 13:02:00,2025-12-03 19:39:00,free_to_paid
+sub_000056,1,acc_00050,pln_starter,month,8,EUR,27,0,216,2025-03-12 22:28:00,2025-11-21 21:37:00,new
+sub_000056,2,acc_00050,pln_starter,month,5,EUR,27,0,135,2025-11-21 21:37:00,2026-02-24 01:35:00,seat_contraction
+sub_000056,3,acc_00050,pln_starter,month,8,EUR,27,0,216,2026-02-24 01:35:00,,seat_expansion
+sub_000057,1,acc_00051,pln_enterprise,month,372,EUR,92,0.1,30801.6,2025-03-23 20:20:00,2025-04-04 00:24:00,new
+sub_000057,2,acc_00051,pln_enterprise,month,431,EUR,92,0.1,35686.8,2025-04-04 00:24:00,2026-02-09 06:39:00,seat_expansion
+sub_000057,3,acc_00051,pln_enterprise,month,624,EUR,92,0.1,51667.2,2026-02-09 06:39:00,2026-08-09 17:16:00,seat_expansion
+sub_000057,4,acc_00051,pln_enterprise,month,719,EUR,92,0.1,59533.2,2026-08-09 17:16:00,,seat_expansion
+sub_000058,1,acc_00052,pln_growth,year,59,USD,50.15,0.2,2367.08,2025-04-25 19:33:00,2025-05-29 10:24:00,new
+sub_000058,2,acc_00052,pln_growth,year,88,USD,50.15,0.2,3530.56,2025-05-29 10:24:00,2025-08-29 20:12:00,seat_expansion
+sub_000058,3,acc_00052,pln_growth,year,100,USD,50.15,0.2,4012.0,2025-08-29 20:12:00,,seat_expansion
+sub_000059,1,acc_00053,pln_starter,month,11,USD,29,0,319,2025-04-28 17:18:00,,new
+sub_000060,1,acc_00054,pln_starter,month,4,GBP,23,0.1,82.8,2025-04-28 04:57:00,2025-06-09 17:57:00,new
+sub_000060,2,acc_00054,pln_starter,month,6,GBP,23,0.1,124.2,2025-06-09 17:57:00,,seat_expansion
+sub_000061,1,acc_00055,pln_free,month,5,USD,0,0,0,2025-04-28 11:31:00,2026-07-02 04:36:00,free_signup
+sub_000062,1,acc_00055,pln_starter,month,5,USD,29,0,145,2026-07-02 04:36:00,,free_to_paid
+sub_000063,1,acc_00056,pln_enterprise,year,290,EUR,78.2,0.2,18142.4,2025-04-07 14:38:00,2025-12-31 21:41:00,new
+sub_000063,2,acc_00056,pln_enterprise,year,370,EUR,78.2,0.2,23147.2,2025-12-31 21:41:00,2026-07-24 00:36:00,seat_expansion
+sub_000063,3,acc_00056,pln_enterprise,year,485,EUR,78.2,0.2,30341.6,2026-07-24 00:36:00,,seat_expansion
+sub_000064,1,acc_00057,pln_starter,month,11,EUR,27,0,297,2025-04-13 06:26:00,2026-08-05 10:00:00,new
+sub_000064,2,acc_00057,pln_starter,month,16,EUR,27,0,432,2026-08-05 10:00:00,2026-08-20 10:00:00,seat_expansion
+sub_000064,3,acc_00057,pln_starter,month,11,EUR,27,0,297,2026-08-20 10:00:00,,seat_contraction
+sub_000065,1,acc_00058,pln_growth,year,15,USD,50.15,0.1,677.02,2025-04-27 08:14:00,,new
+sub_000066,1,acc_00059,pln_starter,month,12,USD,29,0,348,2025-04-25 17:02:00,2025-08-12 12:55:00,new
+sub_000066,2,acc_00059,pln_starter,month,15,USD,29,0,435,2025-08-12 12:55:00,2025-11-07 12:37:00,seat_expansion
+sub_000067,1,acc_00060,pln_starter,month,15,USD,29,0,435,2025-04-24 08:51:00,2025-09-04 22:10:00,new
+sub_000067,2,acc_00060,pln_starter,month,10,USD,29,0,290,2025-09-04 22:10:00,2026-02-04 11:55:00,seat_contraction
+sub_000067,3,acc_00060,pln_starter,month,14,USD,29,0,406,2026-02-04 11:55:00,,seat_expansion
+sub_000068,1,acc_00061,pln_starter,year,4,USD,24.65,0,98.6,2025-04-22 08:47:00,2025-11-22 11:55:00,new
+sub_000068,2,acc_00061,pln_starter,year,6,USD,24.65,0,147.9,2025-11-22 11:55:00,,seat_expansion
+sub_000069,1,acc_00062,pln_growth,month,44,USD,59,0.2,2076.8,2025-04-23 15:48:00,2026-03-03 04:00:00,new
+sub_000069,2,acc_00062,pln_growth,month,55,USD,59,0.2,2596.0,2026-03-03 04:00:00,2026-06-25 12:04:00,seat_expansion
+sub_000069,3,acc_00062,pln_growth,month,44,USD,59,0.2,2076.8,2026-06-25 12:04:00,2026-08-25 22:15:00,seat_contraction
+sub_000070,1,acc_00063,pln_free,month,12,USD,0,0,0,2025-04-07 03:15:00,2025-05-26 22:30:00,free_signup
+sub_000071,1,acc_00063,pln_starter,month,12,USD,29,0,348,2025-05-26 22:30:00,2026-04-13 11:46:00,free_to_paid
+sub_000072,1,acc_00064,pln_starter,month,6,USD,29,0,174,2025-04-25 20:32:00,,new
+sub_000073,1,acc_00065,pln_starter,month,8,USD,29,0.1,208.8,2025-04-23 21:27:00,2026-06-27 22:52:00,new
+sub_000074,1,acc_00066,pln_starter,month,8,GBP,23,0,184,2025-04-10 01:46:00,2025-07-25 20:24:00,new
+sub_000075,1,acc_00067,pln_starter,month,4,USD,29,0,116,2025-04-11 02:30:00,2026-02-10 05:22:00,new
+sub_000076,1,acc_00067,pln_starter,month,3,USD,29,0,87,2026-07-27 07:12:00,,reactivation
+sub_000077,1,acc_00068,pln_starter,year,5,EUR,22.95,0,114.75,2025-04-22 00:24:00,2026-04-22 00:24:00,new
+sub_000078,1,acc_00069,pln_starter,year,7,EUR,22.95,0,160.65,2025-04-17 08:51:00,,new
+sub_000079,1,acc_00070,pln_starter,month,12,USD,29,0.1,313.2,2025-04-07 03:08:00,2025-10-25 00:59:00,new
+sub_000079,2,acc_00070,pln_starter,month,16,USD,29,0.1,417.6,2025-10-25 00:59:00,,seat_expansion
+sub_000080,1,acc_00071,pln_starter,month,9,USD,29,0,261,2025-04-21 14:05:00,,new
+sub_000081,1,acc_00072,pln_growth,year,37,USD,50.15,0,1855.55,2025-04-27 19:19:00,2026-06-01 14:40:00,new
+sub_000081,2,acc_00072,pln_growth,year,52,USD,50.15,0,2607.8,2026-06-01 14:40:00,,seat_expansion
+sub_000082,1,acc_00073,pln_growth,year,32,USD,50.15,0.1,1444.32,2025-05-07 10:53:00,,new
+sub_000083,1,acc_00074,pln_growth,year,20,USD,50.15,0,1003.0,2025-05-30 01:43:00,2026-02-22 01:06:00,new
+sub_000083,2,acc_00074,pln_growth,year,23,USD,50.15,0,1153.45,2026-02-22 01:06:00,,seat_expansion
+sub_000084,1,acc_00075,pln_enterprise,year,325,USD,84.15,0,27348.75,2025-05-29 10:29:00,2026-05-29 10:29:00,new
+sub_000084,2,acc_00075,pln_enterprise,year,234,USD,84.15,0,19691.1,2026-05-29 10:29:00,2026-09-05 21:09:00,seat_contraction
+sub_000085,1,acc_00076,pln_free,month,8,USD,0,0,0,2025-05-11 09:36:00,,free_signup
+sub_000086,1,acc_00077,pln_starter,month,7,USD,29,0,203,2025-05-16 04:12:00,2025-06-24 15:42:00,new
+sub_000087,1,acc_00078,pln_starter,month,11,EUR,27,0.1,267.3,2025-05-08 05:27:00,2026-06-15 16:57:00,new
+sub_000088,1,acc_00079,pln_growth,month,29,USD,59,0.2,1368.8,2025-05-03 08:16:00,2025-08-03 04:38:00,new
+sub_000088,2,acc_00079,pln_growth,month,34,USD,59,0.2,1604.8,2025-08-03 04:38:00,2026-04-30 14:24:00,seat_expansion
+sub_000088,3,acc_00079,pln_growth,month,51,USD,59,0.2,2407.2,2026-04-30 14:24:00,,seat_expansion
+sub_000089,1,acc_00080,pln_starter,year,14,GBP,19.55,0,273.7,2025-05-04 02:54:00,,new
+sub_000090,1,acc_00081,pln_growth,year,70,USD,50.15,0,3510.5,2025-05-23 10:57:00,2025-11-13 21:12:00,new
+sub_000090,2,acc_00081,pln_growth,year,88,USD,50.15,0,4413.2,2025-11-13 21:12:00,2026-05-23 10:57:00,seat_expansion
+sub_000091,1,acc_00082,pln_growth,year,31,USD,50.15,0,1554.65,2025-05-02 23:09:00,2026-05-02 23:09:00,new
+sub_000092,1,acc_00082,pln_growth,month,28,USD,59,0,1652,2026-08-30 02:45:00,,reactivation
+sub_000093,1,acc_00083,pln_starter,year,9,USD,24.65,0,221.85,2025-05-02 19:11:00,2026-07-17 03:04:00,new
+sub_000093,2,acc_00083,pln_starter,year,13,USD,24.65,0,320.45,2026-07-17 03:04:00,,seat_expansion
+sub_000094,1,acc_00084,pln_starter,month,6,USD,29,0,174,2025-05-13 07:04:00,2025-08-19 01:17:00,new
+sub_000094,2,acc_00084,pln_growth,month,6,USD,59,0,354,2025-08-19 01:17:00,,plan_upgrade
+sub_000095,1,acc_00085,pln_starter,year,9,USD,24.65,0,221.85,2025-05-24 18:01:00,2025-06-21 02:24:00,new
+sub_000096,1,acc_00085,pln_starter,month,9,USD,29,0,261,2025-09-14 08:44:00,,reactivation
+sub_000097,1,acc_00086,pln_growth,year,26,USD,50.15,0,1303.9,2025-05-12 21:44:00,2026-06-12 09:29:00,new
+sub_000097,2,acc_00086,pln_growth,year,36,USD,50.15,0,1805.4,2026-06-12 09:29:00,,seat_expansion
+sub_000098,1,acc_00087,pln_starter,month,3,USD,29,0,87,2025-05-12 04:23:00,2026-04-20 07:28:00,new
+sub_000098,2,acc_00087,pln_starter,month,4,USD,29,0,116,2026-04-20 07:28:00,,seat_expansion
+sub_000099,1,acc_00088,pln_growth,month,75,USD,59,0.2,3540.0,2025-05-14 04:53:00,2025-12-09 09:40:00,new
+sub_000099,2,acc_00088,pln_growth,month,97,USD,59,0.2,4578.4,2025-12-09 09:40:00,2026-07-11 14:56:00,seat_expansion
+sub_000099,3,acc_00088,pln_growth,month,81,USD,59,0.2,3823.2,2026-07-11 14:56:00,2026-09-10 16:40:00,seat_contraction
+sub_000099,4,acc_00088,pln_growth,month,106,USD,59,0.2,5003.2,2026-09-10 16:40:00,,seat_expansion
+sub_000100,1,acc_00089,pln_starter,month,10,USD,29,0,290,2025-05-18 19:44:00,2025-10-27 03:14:00,new
+sub_000100,2,acc_00089,pln_growth,month,10,USD,59,0,590,2025-10-27 03:14:00,2026-03-16 13:02:00,plan_upgrade
+sub_000101,1,acc_00089,pln_starter,month,6,USD,29,0,174,2026-05-22 16:37:00,,reactivation
+sub_000102,1,acc_00090,pln_enterprise,year,381,USD,84.15,0,32061.15,2025-05-04 06:58:00,2026-03-22 15:43:00,new
+sub_000102,2,acc_00090,pln_enterprise,year,436,USD,84.15,0,36689.4,2026-03-22 15:43:00,,seat_expansion
+sub_000103,1,acc_00091,pln_free,month,10,EUR,0,0,0,2025-05-17 08:09:00,2025-09-06 12:38:00,free_signup
+sub_000104,1,acc_00091,pln_starter,month,10,EUR,27,0,270,2025-09-06 12:38:00,2026-05-14 03:24:00,free_to_paid
+sub_000104,2,acc_00091,pln_starter,month,15,EUR,27,0,405,2026-05-14 03:24:00,2026-06-06 17:42:00,seat_expansion
+sub_000104,3,acc_00091,pln_starter,month,19,EUR,27,0,513,2026-06-06 17:42:00,,seat_expansion
+sub_000105,1,acc_00092,pln_starter,month,9,USD,29,0,261,2025-05-24 18:01:00,2025-10-22 13:36:00,new
+sub_000105,2,acc_00092,pln_starter,month,12,USD,29,0,348,2025-10-22 13:36:00,2025-11-16 18:01:00,seat_expansion
+sub_000106,1,acc_00093,pln_growth,month,26,USD,59,0.2,1227.2,2025-06-18 06:18:00,2025-07-26 16:30:00,new
+sub_000106,2,acc_00093,pln_growth,month,20,USD,59,0.2,944.0,2025-07-26 16:30:00,,seat_contraction
+sub_000107,1,acc_00094,pln_growth,year,32,USD,50.15,0.2,1283.84,2025-06-10 02:57:00,2026-06-29 19:02:00,new
+sub_000107,2,acc_00094,pln_growth,year,44,USD,50.15,0.2,1765.28,2026-06-29 19:02:00,,seat_expansion
+sub_000108,1,acc_00095,pln_starter,month,6,USD,29,0,174,2025-06-30 08:19:00,2025-08-28 02:52:00,new
+sub_000108,2,acc_00095,pln_starter,month,8,USD,29,0,232,2025-08-28 02:52:00,2026-06-07 20:19:00,seat_expansion
+sub_000108,3,acc_00095,pln_starter,month,10,USD,29,0,290,2026-06-07 20:19:00,,seat_expansion
+sub_000109,1,acc_00096,pln_enterprise,year,299,EUR,78.2,0,23381.8,2025-06-15 06:16:00,2026-03-05 10:44:00,new
+sub_000109,2,acc_00096,pln_enterprise,year,377,EUR,78.2,0,29481.4,2026-03-05 10:44:00,,seat_expansion
+sub_000110,1,acc_00097,pln_enterprise,month,335,USD,99,0,33165,2025-06-23 16:27:00,,new
+sub_000111,1,acc_00098,pln_growth,year,66,USD,50.15,0,3309.9,2025-06-10 10:51:00,2026-04-11 14:43:00,new
+sub_000111,2,acc_00098,pln_enterprise,year,66,USD,84.15,0,5553.9,2026-04-11 14:43:00,,plan_upgrade
+sub_000112,1,acc_00099,pln_growth,year,65,EUR,46.75,0.1,2734.88,2025-06-03 16:01:00,,new
+sub_000113,1,acc_00100,pln_starter,month,12,USD,29,0.1,313.2,2025-06-01 03:40:00,2025-11-19 10:35:00,new
+sub_000114,1,acc_00101,pln_growth,month,35,USD,59,0,2065,2025-06-10 23:45:00,,new
+sub_000115,1,acc_00102,pln_starter,month,5,USD,29,0,145,2025-06-14 11:40:00,,new
+sub_000116,1,acc_00103,pln_starter,year,5,EUR,22.95,0.1,103.28,2025-06-18 09:13:00,,new
+sub_000117,1,acc_00104,pln_growth,year,72,USD,50.15,0.2,2888.64,2025-06-14 13:05:00,2026-01-06 17:23:00,new
+sub_000117,2,acc_00104,pln_growth,year,83,USD,50.15,0.2,3329.96,2026-01-06 17:23:00,2026-07-18 11:04:00,seat_expansion
+sub_000118,1,acc_00105,pln_growth,year,72,EUR,46.75,0,3366.0,2025-06-27 19:08:00,2026-06-27 19:08:00,new
+sub_000119,1,acc_00105,pln_growth,month,44,EUR,55,0,2420,2026-08-14 05:26:00,,reactivation
+sub_000120,1,acc_00106,pln_free,month,7,EUR,0,0,0,2025-06-23 01:19:00,2026-05-21 07:58:00,free_signup
+sub_000121,1,acc_00106,pln_starter,month,7,EUR,27,0,189,2026-05-21 07:58:00,,free_to_paid
+sub_000122,1,acc_00107,pln_growth,month,52,USD,59,0,3068,2025-06-18 14:02:00,2026-06-01 21:11:00,new
+sub_000122,2,acc_00107,pln_growth,month,76,USD,59,0,4484,2026-06-01 21:11:00,,seat_expansion
+sub_000123,1,acc_00108,pln_enterprise,year,371,USD,84.15,0,31219.65,2025-06-23 19:13:00,2025-10-23 21:34:00,new
+sub_000123,2,acc_00108,pln_enterprise,year,500,USD,84.15,0,42075.0,2025-10-23 21:34:00,2025-11-14 20:43:00,seat_expansion
+sub_000123,3,acc_00108,pln_enterprise,year,739,USD,84.15,0,62186.85,2025-11-14 20:43:00,2026-03-07 10:05:00,seat_expansion
+sub_000123,4,acc_00108,pln_enterprise,year,1074,USD,84.15,0,90377.1,2026-03-07 10:05:00,2026-06-23 19:13:00,seat_expansion
+sub_000123,5,acc_00108,pln_enterprise,year,886,USD,84.15,0,74556.9,2026-06-23 19:13:00,,seat_contraction
+sub_000124,1,acc_00109,pln_free,month,3,EUR,0,0,0,2025-06-03 01:58:00,,free_signup
+sub_000125,1,acc_00110,pln_growth,month,39,USD,59,0,2301,2025-06-11 18:12:00,2026-01-19 21:43:00,new
+sub_000126,1,acc_00111,pln_starter,month,3,USD,29,0,87,2025-06-06 03:29:00,2025-10-01 02:22:00,new
+sub_000126,2,acc_00111,pln_growth,month,3,USD,59,0,177,2025-10-01 02:22:00,2026-01-01 06:12:00,plan_upgrade
+sub_000126,3,acc_00111,pln_growth,month,2,USD,59,0,118,2026-01-01 06:12:00,,seat_contraction
+sub_000127,1,acc_00112,pln_enterprise,month,379,EUR,92,0,34868,2025-06-10 04:20:00,,new
+sub_000128,1,acc_00113,pln_growth,month,80,EUR,55,0,4400,2025-06-10 09:52:00,2025-12-05 18:55:00,new
+sub_000128,2,acc_00113,pln_enterprise,month,80,EUR,92,0,7360,2025-12-05 18:55:00,2026-01-26 21:53:00,plan_upgrade
+sub_000129,1,acc_00114,pln_free,month,10,USD,0,0,0,2025-06-13 02:34:00,2025-09-23 19:31:00,free_signup
+sub_000130,1,acc_00114,pln_starter,month,10,USD,29,0,290,2025-09-23 19:31:00,2026-02-11 13:25:00,free_to_paid
+sub_000131,1,acc_00115,pln_starter,month,12,USD,29,0.1,313.2,2025-06-22 14:17:00,2026-05-29 05:17:00,new
+sub_000131,2,acc_00115,pln_starter,month,10,USD,29,0.1,261.0,2026-05-29 05:17:00,,seat_contraction
+sub_000132,1,acc_00116,pln_starter,year,10,EUR,22.95,0,229.5,2025-06-24 14:31:00,2025-12-22 17:13:00,new
+sub_000132,2,acc_00116,pln_starter,year,12,EUR,22.95,0,275.4,2025-12-22 17:13:00,2026-06-24 14:31:00,seat_expansion
+sub_000133,1,acc_00117,pln_enterprise,year,165,USD,84.15,0.2,11107.8,2025-06-03 07:56:00,,new
+sub_000134,1,acc_00118,pln_starter,year,13,EUR,22.95,0.1,268.51,2025-06-02 04:23:00,,new
+sub_000135,1,acc_00119,pln_growth,year,46,USD,50.15,0.2,1845.52,2025-06-15 09:10:00,2025-11-13 13:54:00,new
+sub_000135,2,acc_00119,pln_enterprise,year,46,USD,84.15,0.2,3096.72,2025-11-13 13:54:00,2026-04-28 16:46:00,plan_upgrade
+sub_000135,3,acc_00119,pln_enterprise,year,64,USD,84.15,0.2,4308.48,2026-04-28 16:46:00,,seat_expansion
+sub_000136,1,acc_00120,pln_growth,year,33,EUR,46.75,0.1,1388.48,2025-07-08 15:02:00,2026-06-06 15:00:00,new
+sub_000136,2,acc_00120,pln_enterprise,year,33,EUR,78.2,0.1,2322.54,2026-06-06 15:00:00,,plan_upgrade
+sub_000137,1,acc_00121,pln_starter,year,5,USD,24.65,0,123.25,2025-07-07 08:57:00,2025-11-19 01:06:00,new
+sub_000137,2,acc_00121,pln_growth,year,5,USD,50.15,0,250.75,2025-11-19 01:06:00,2026-09-28 22:25:00,plan_upgrade
+sub_000137,3,acc_00121,pln_growth,year,8,USD,50.15,0,401.2,2026-09-28 22:25:00,,seat_expansion
+sub_000138,1,acc_00122,pln_free,month,13,EUR,0,0,0,2025-07-20 21:42:00,2025-09-26 23:20:00,free_signup
+sub_000139,1,acc_00122,pln_starter,month,13,EUR,27,0,351,2025-09-26 23:20:00,2026-07-16 02:19:00,free_to_paid
+sub_000140,1,acc_00123,pln_starter,month,10,USD,29,0,290,2025-07-30 10:57:00,,new
+sub_000141,1,acc_00124,pln_starter,month,8,EUR,27,0,216,2025-07-05 23:42:00,2025-10-05 10:00:00,new
+sub_000141,2,acc_00124,pln_starter,month,13,EUR,27,0,351,2025-10-05 10:00:00,2025-10-20 10:00:00,seat_expansion
+sub_000141,3,acc_00124,pln_starter,month,8,EUR,27,0,216,2025-10-20 10:00:00,2026-06-13 10:27:00,seat_contraction
+sub_000141,4,acc_00124,pln_starter,month,12,EUR,27,0,324,2026-06-13 10:27:00,,seat_expansion
+sub_000142,1,acc_00125,pln_growth,year,27,USD,50.15,0.1,1218.64,2025-07-28 04:24:00,2025-10-08 12:31:00,new
+sub_000142,2,acc_00125,pln_growth,year,37,USD,50.15,0.1,1669.99,2025-10-08 12:31:00,2026-02-04 02:07:00,seat_expansion
+sub_000142,3,acc_00125,pln_growth,year,51,USD,50.15,0.1,2301.89,2026-02-04 02:07:00,,seat_expansion
+sub_000143,1,acc_00126,pln_growth,month,72,USD,59,0,4248,2025-07-29 03:11:00,,new
+sub_000144,1,acc_00127,pln_starter,month,9,USD,29,0,261,2025-07-05 07:17:00,2026-06-17 22:09:00,new
+sub_000145,1,acc_00128,pln_starter,month,4,USD,29,0,116,2025-07-14 16:45:00,2025-12-31 13:43:00,new
+sub_000145,2,acc_00128,pln_starter,month,6,USD,29,0,174,2025-12-31 13:43:00,,seat_expansion
+sub_000146,1,acc_00129,pln_starter,month,7,USD,29,0.1,182.7,2025-07-16 09:16:00,2025-11-29 23:11:00,new
+sub_000146,2,acc_00129,pln_starter,month,8,USD,29,0.1,208.8,2025-11-29 23:11:00,2026-03-25 21:16:00,seat_expansion
+sub_000147,1,acc_00130,pln_starter,month,9,USD,29,0,261,2025-07-11 01:10:00,2025-12-05 11:32:00,new
+sub_000147,2,acc_00130,pln_growth,month,9,USD,59,0,531,2025-12-05 11:32:00,2026-01-27 10:27:00,plan_upgrade
+sub_000147,3,acc_00130,pln_growth,month,8,USD,59,0,472,2026-01-27 10:27:00,,seat_contraction
+sub_000148,1,acc_00131,pln_starter,month,7,USD,29,0,203,2025-07-14 15:03:00,2025-09-22 23:20:00,new
+sub_000149,1,acc_00132,pln_starter,month,14,EUR,27,0,378,2025-07-09 06:37:00,2026-01-07 13:35:00,new
+sub_000149,2,acc_00132,pln_starter,month,11,EUR,27,0,297,2026-01-07 13:35:00,,seat_contraction
+sub_000150,1,acc_00133,pln_starter,month,6,GBP,23,0,138,2025-07-26 16:29:00,2026-02-12 20:38:00,new
+sub_000151,1,acc_00134,pln_starter,month,6,USD,29,0,174,2025-07-23 12:41:00,2026-03-06 05:52:00,new
+sub_000152,1,acc_00135,pln_growth,year,28,GBP,39.95,0,1118.6,2025-07-25 02:17:00,2026-01-08 00:14:00,new
+sub_000153,1,acc_00136,pln_starter,year,12,USD,24.65,0,295.8,2025-07-10 11:04:00,2026-02-05 20:09:00,new
+sub_000153,2,acc_00136,pln_starter,year,16,USD,24.65,0,394.4,2026-02-05 20:09:00,,seat_expansion
+sub_000154,1,acc_00137,pln_starter,month,4,EUR,27,0,108,2025-07-18 15:34:00,,new
+sub_000155,1,acc_00138,pln_starter,year,5,USD,24.65,0,123.25,2025-07-05 01:56:00,,new
+sub_000156,1,acc_00139,pln_growth,month,40,USD,59,0,2360,2025-07-04 02:13:00,2026-01-06 04:43:00,new
+sub_000156,2,acc_00139,pln_growth,month,59,USD,59,0,3481,2026-01-06 04:43:00,2026-09-25 09:35:00,seat_expansion
+sub_000156,3,acc_00139,pln_growth,month,84,USD,59,0,4956,2026-09-25 09:35:00,,seat_expansion
+sub_000157,1,acc_00140,pln_enterprise,year,342,USD,84.15,0,28779.3,2025-07-13 13:54:00,2025-09-21 01:47:00,new
+sub_000157,2,acc_00140,pln_enterprise,year,485,USD,84.15,0,40812.75,2025-09-21 01:47:00,,seat_expansion
+sub_000158,1,acc_00141,pln_growth,year,48,USD,50.15,0,2407.2,2025-07-03 09:55:00,2025-12-26 19:12:00,new
+sub_000158,2,acc_00141,pln_enterprise,year,48,USD,84.15,0,4039.2,2025-12-26 19:12:00,2026-07-03 09:55:00,plan_upgrade
+sub_000159,1,acc_00142,pln_starter,month,12,USD,29,0,348,2025-07-25 05:38:00,,new
+sub_000160,1,acc_00143,pln_starter,month,11,USD,29,0,319,2025-07-27 20:45:00,2025-09-30 13:02:00,new
+sub_000161,1,acc_00143,pln_starter,month,11,USD,29,0,319,2025-10-05 11:53:00,,reactivation
+sub_000162,1,acc_00144,pln_starter,month,6,EUR,27,0,162,2025-07-21 20:49:00,2025-10-19 03:07:00,new
+sub_000162,2,acc_00144,pln_starter,month,9,EUR,27,0,243,2025-10-19 03:07:00,2026-03-03 15:40:00,seat_expansion
+sub_000162,3,acc_00144,pln_growth,month,9,EUR,55,0,495,2026-03-03 15:40:00,2026-07-06 21:36:00,plan_upgrade
+sub_000163,1,acc_00145,pln_growth,month,40,USD,59,0,2360,2025-07-05 07:05:00,,new
+sub_000164,1,acc_00146,pln_starter,year,9,EUR,22.95,0,206.55,2025-08-11 06:12:00,,new
+sub_000165,1,acc_00147,pln_enterprise,year,303,USD,84.15,0,25497.45,2025-08-04 00:14:00,,new
+sub_000166,1,acc_00148,pln_growth,month,43,EUR,55,0.1,2128.5,2025-08-10 22:29:00,2026-09-02 18:17:00,new
+sub_000166,2,acc_00148,pln_enterprise,month,43,EUR,92,0.1,3560.4,2026-09-02 18:17:00,,plan_upgrade
+sub_000167,1,acc_00149,pln_growth,year,73,USD,50.15,0,3660.95,2025-08-23 07:10:00,2025-09-09 02:10:00,new
+sub_000167,2,acc_00149,pln_growth,year,106,USD,50.15,0,5315.9,2025-09-09 02:10:00,2026-09-19 23:44:00,seat_expansion
+sub_000167,3,acc_00149,pln_growth,year,132,USD,50.15,0,6619.8,2026-09-19 23:44:00,,seat_expansion
+sub_000168,1,acc_00150,pln_enterprise,year,381,USD,84.15,0,32061.15,2025-08-29 16:11:00,2026-05-12 21:53:00,new
+sub_000168,2,acc_00150,pln_enterprise,year,420,USD,84.15,0,35343.0,2026-05-12 21:53:00,,seat_expansion
+sub_000169,1,acc_00151,pln_starter,year,15,USD,24.65,0,369.75,2025-08-20 09:11:00,,new
+sub_000170,1,acc_00152,pln_growth,year,25,USD,50.15,0,1253.75,2025-08-22 00:29:00,2026-03-20 03:33:00,new
+sub_000170,2,acc_00152,pln_enterprise,year,25,USD,84.15,0,2103.75,2026-03-20 03:33:00,,plan_upgrade
+sub_000171,1,acc_00153,pln_growth,month,64,USD,59,0,3776,2025-08-10 21:06:00,2026-02-06 11:32:00,new
+sub_000172,1,acc_00154,pln_growth,month,79,USD,59,0.2,3728.8,2025-08-27 20:30:00,2026-04-05 10:00:00,new
+sub_000172,2,acc_00154,pln_growth,month,84,USD,59,0.2,3964.8,2026-04-05 10:00:00,2026-04-20 10:00:00,seat_expansion
+sub_000172,3,acc_00154,pln_growth,month,79,USD,59,0.2,3728.8,2026-04-20 10:00:00,,seat_contraction
+sub_000173,1,acc_00155,pln_growth,year,71,USD,50.15,0.1,3204.59,2025-08-16 16:22:00,2026-08-16 16:22:00,new
+sub_000173,2,acc_00155,pln_growth,year,56,USD,50.15,0.1,2527.56,2026-08-16 16:22:00,,seat_contraction
+sub_000174,1,acc_00156,pln_starter,month,6,USD,29,0,174,2025-08-16 04:17:00,2025-10-26 06:34:00,new
+sub_000174,2,acc_00156,pln_starter,month,8,USD,29,0,232,2025-10-26 06:34:00,2025-11-16 01:24:00,seat_expansion
+sub_000174,3,acc_00156,pln_starter,month,12,USD,29,0,348,2025-11-16 01:24:00,2026-04-05 10:00:00,seat_expansion
+sub_000174,4,acc_00156,pln_starter,month,17,USD,29,0,493,2026-04-05 10:00:00,2026-04-20 10:00:00,seat_expansion
+sub_000174,5,acc_00156,pln_starter,month,12,USD,29,0,348,2026-04-20 10:00:00,2026-09-24 07:52:00,seat_contraction
+sub_000175,1,acc_00157,pln_growth,year,49,EUR,46.75,0.2,1832.6,2025-08-10 11:49:00,2026-06-07 12:11:00,new
+sub_000175,2,acc_00157,pln_growth,year,65,EUR,46.75,0.2,2431.0,2026-06-07 12:11:00,,seat_expansion
+sub_000176,1,acc_00158,pln_growth,month,51,EUR,55,0.2,2244.0,2025-08-30 23:48:00,2026-01-09 11:17:00,new
+sub_000176,2,acc_00158,pln_growth,month,73,EUR,55,0.2,3212.0,2026-01-09 11:17:00,2026-06-03 08:57:00,seat_expansion
+sub_000176,3,acc_00158,pln_growth,month,60,EUR,55,0.2,2640.0,2026-06-03 08:57:00,,seat_contraction
+sub_000177,1,acc_00159,pln_growth,month,62,EUR,55,0.1,3069.0,2025-08-17 14:07:00,2025-11-12 01:18:00,new
+sub_000177,2,acc_00159,pln_growth,month,91,EUR,55,0.1,4504.5,2025-11-12 01:18:00,2026-02-24 04:24:00,seat_expansion
+sub_000177,3,acc_00159,pln_growth,month,124,EUR,55,0.1,6138.0,2026-02-24 04:24:00,,seat_expansion
+sub_000178,1,acc_00160,pln_enterprise,year,240,USD,84.15,0.1,18176.4,2025-08-14 21:37:00,2026-06-24 11:28:00,new
+sub_000178,2,acc_00160,pln_enterprise,year,352,USD,84.15,0.1,26658.72,2026-06-24 11:28:00,,seat_expansion
+sub_000179,1,acc_00161,pln_starter,month,12,USD,29,0.1,313.2,2025-08-19 08:49:00,,new
+sub_000180,1,acc_00162,pln_growth,month,25,USD,59,0,1475,2025-08-14 15:16:00,2026-02-21 20:00:00,new
+sub_000180,2,acc_00162,pln_enterprise,month,25,USD,99,0,2475,2026-02-21 20:00:00,,plan_upgrade
+sub_000181,1,acc_00163,pln_starter,month,9,USD,29,0,261,2025-08-04 05:29:00,2025-10-09 16:13:00,new
+sub_000182,1,acc_00164,pln_growth,year,57,USD,50.15,0.2,2286.84,2025-08-14 07:36:00,2026-03-01 16:06:00,new
+sub_000182,2,acc_00164,pln_growth,year,81,USD,50.15,0.2,3249.72,2026-03-01 16:06:00,2026-07-24 17:38:00,seat_expansion
+sub_000182,3,acc_00164,pln_growth,year,93,USD,50.15,0.2,3731.16,2026-07-24 17:38:00,,seat_expansion
+sub_000183,1,acc_00165,pln_starter,month,14,USD,29,0,406,2025-08-14 02:14:00,2025-12-25 07:28:00,new
+sub_000184,1,acc_00166,pln_starter,month,14,EUR,27,0,378,2025-08-16 08:26:00,2026-04-17 23:07:00,new
+sub_000184,2,acc_00166,pln_growth,month,14,EUR,55,0,770,2026-04-17 23:07:00,,plan_upgrade
+sub_000185,1,acc_00167,pln_free,month,9,USD,0,0,0,2025-08-24 04:10:00,,free_signup
+sub_000186,1,acc_00168,pln_enterprise,year,383,USD,84.15,0,32229.45,2025-08-10 11:39:00,2026-01-08 06:05:00,new
+sub_000186,2,acc_00168,pln_enterprise,year,564,USD,84.15,0,47460.6,2026-01-08 06:05:00,,seat_expansion
+sub_000187,1,acc_00169,pln_starter,month,12,USD,29,0,348,2025-09-28 11:54:00,2025-10-15 11:33:00,new
+sub_000187,2,acc_00169,pln_growth,month,12,USD,59,0,708,2025-10-15 11:33:00,2026-01-09 01:41:00,plan_upgrade
+sub_000187,3,acc_00169,pln_growth,month,16,USD,59,0,944,2026-01-09 01:41:00,2026-09-01 19:57:00,seat_expansion
+sub_000187,4,acc_00169,pln_growth,month,23,USD,59,0,1357,2026-09-01 19:57:00,,seat_expansion
+sub_000188,1,acc_00170,pln_growth,year,22,USD,50.15,0.2,882.64,2025-09-19 23:23:00,2026-08-23 09:11:00,new
+sub_000188,2,acc_00170,pln_growth,year,30,USD,50.15,0.2,1203.6,2026-08-23 09:11:00,,seat_expansion
+sub_000189,1,acc_00171,pln_starter,year,9,USD,24.65,0.1,199.66,2025-09-21 16:28:00,2026-08-23 03:40:00,new
+sub_000189,2,acc_00171,pln_starter,year,14,USD,24.65,0.1,310.59,2026-08-23 03:40:00,2026-09-21 16:28:00,seat_expansion
+sub_000190,1,acc_00172,pln_starter,month,10,USD,29,0,290,2025-09-10 05:29:00,2025-12-30 07:48:00,new
+sub_000190,2,acc_00172,pln_starter,month,8,USD,29,0,232,2025-12-30 07:48:00,2026-09-03 09:50:00,seat_contraction
+sub_000190,3,acc_00172,pln_starter,month,6,USD,29,0,174,2026-09-03 09:50:00,,seat_contraction
+sub_000191,1,acc_00173,pln_starter,month,5,EUR,27,0,135,2025-09-22 12:53:00,2026-02-20 05:49:00,new
+sub_000192,1,acc_00173,pln_starter,month,3,EUR,27,0,81,2026-06-20 12:58:00,,reactivation
+sub_000193,1,acc_00174,pln_starter,month,5,EUR,27,0,135,2025-09-04 20:55:00,2025-11-14 08:47:00,new
+sub_000193,2,acc_00174,pln_starter,month,4,EUR,27,0,108,2025-11-14 08:47:00,,seat_contraction
+sub_000194,1,acc_00175,pln_starter,year,5,USD,24.65,0,123.25,2025-09-02 19:07:00,,new
+sub_000195,1,acc_00176,pln_starter,month,12,USD,29,0,348,2025-09-19 08:19:00,2026-01-07 00:50:00,new
+sub_000196,1,acc_00176,pln_starter,month,10,USD,29,0,290,2026-09-11 07:04:00,,reactivation
+sub_000197,1,acc_00177,pln_starter,year,14,EUR,22.95,0,321.3,2025-09-12 14:09:00,2026-03-20 18:10:00,new
+sub_000197,2,acc_00177,pln_starter,year,19,EUR,22.95,0,436.05,2026-03-20 18:10:00,2026-09-12 14:09:00,seat_expansion
+sub_000198,1,acc_00178,pln_starter,month,12,USD,29,0,348,2025-09-06 23:25:00,2026-04-27 10:48:00,new
+sub_000198,2,acc_00178,pln_starter,month,15,USD,29,0,435,2026-04-27 10:48:00,,seat_expansion
+sub_000199,1,acc_00179,pln_growth,year,52,USD,50.15,0,2607.8,2025-09-08 05:30:00,,new
+sub_000200,1,acc_00180,pln_starter,month,4,EUR,27,0,108,2025-09-22 10:09:00,2026-03-29 11:36:00,new
+sub_000200,2,acc_00180,pln_starter,month,5,EUR,27,0,135,2026-03-29 11:36:00,,seat_expansion
+sub_000201,1,acc_00181,pln_starter,month,4,USD,29,0,116,2025-09-28 16:30:00,2026-01-24 16:57:00,new
+sub_000201,2,acc_00181,pln_growth,month,4,USD,59,0,236,2026-01-24 16:57:00,2026-07-05 10:00:00,plan_upgrade
+sub_000201,3,acc_00181,pln_growth,month,9,USD,59,0,531,2026-07-05 10:00:00,2026-07-20 10:00:00,seat_expansion
+sub_000201,4,acc_00181,pln_growth,month,4,USD,59,0,236,2026-07-20 10:00:00,,seat_contraction
+sub_000202,1,acc_00182,pln_free,month,10,USD,0,0,0,2025-09-18 01:20:00,2026-01-14 03:46:00,free_signup
+sub_000203,1,acc_00182,pln_starter,month,10,USD,29,0,290,2026-01-14 03:46:00,2026-04-25 13:38:00,free_to_paid
+sub_000203,2,acc_00182,pln_starter,month,14,USD,29,0,406,2026-04-25 13:38:00,,seat_expansion
+sub_000204,1,acc_00183,pln_growth,month,53,USD,59,0,3127,2025-09-04 07:13:00,,new
+sub_000205,1,acc_00184,pln_enterprise,year,131,USD,84.15,0,11023.65,2025-09-30 22:31:00,,new
+sub_000206,1,acc_00185,pln_starter,month,11,GBP,23,0,253,2025-09-02 16:23:00,,new
+sub_000207,1,acc_00186,pln_growth,year,27,EUR,46.75,0.2,1009.8,2025-09-23 18:09:00,2026-02-15 03:53:00,new
+sub_000207,2,acc_00186,pln_growth,year,30,EUR,46.75,0.2,1122.0,2026-02-15 03:53:00,2026-09-23 18:09:00,seat_expansion
+sub_000208,1,acc_00187,pln_starter,month,4,USD,29,0,116,2025-09-13 13:25:00,2025-11-09 23:41:00,new
+sub_000208,2,acc_00187,pln_starter,month,5,USD,29,0,145,2025-11-09 23:41:00,2026-01-17 04:08:00,seat_expansion
+sub_000209,1,acc_00188,pln_growth,year,56,USD,50.15,0,2808.4,2025-09-01 15:13:00,2025-10-28 04:58:00,new
+sub_000209,2,acc_00188,pln_growth,year,74,USD,50.15,0,3711.1,2025-10-28 04:58:00,2026-09-01 15:13:00,seat_expansion
+sub_000210,1,acc_00189,pln_starter,month,9,EUR,27,0,243,2025-09-15 21:37:00,2025-11-07 05:00:00,new
+sub_000210,2,acc_00189,pln_starter,month,6,EUR,27,0,162,2025-11-07 05:00:00,,seat_contraction
+sub_000211,1,acc_00190,pln_starter,year,11,USD,24.65,0,271.15,2025-09-12 09:28:00,2026-09-12 09:28:00,new
+sub_000212,1,acc_00191,pln_starter,month,14,USD,29,0,406,2025-09-15 10:08:00,,new
+sub_000213,1,acc_00192,pln_growth,month,36,EUR,55,0.1,1782.0,2025-09-02 12:53:00,,new
+sub_000214,1,acc_00193,pln_growth,year,18,USD,50.15,0,902.7,2025-10-17 01:25:00,,new
+sub_000215,1,acc_00194,pln_growth,month,71,USD,59,0,4189,2025-10-25 12:12:00,,new
+sub_000216,1,acc_00195,pln_starter,month,8,USD,29,0,232,2025-10-23 11:51:00,2026-08-20 14:31:00,new
+sub_000216,2,acc_00195,pln_starter,month,6,USD,29,0,174,2026-08-20 14:31:00,,seat_contraction
+sub_000217,1,acc_00196,pln_starter,month,6,EUR,27,0.1,145.8,2025-10-07 21:28:00,2025-12-20 01:45:00,new
+sub_000217,2,acc_00196,pln_starter,month,9,EUR,27,0.1,218.7,2025-12-20 01:45:00,2026-06-30 15:46:00,seat_expansion
+sub_000218,1,acc_00197,pln_growth,month,72,USD,59,0.2,3398.4,2025-10-09 12:12:00,2025-11-18 01:43:00,new
+sub_000218,2,acc_00197,pln_growth,month,55,USD,59,0.2,2596.0,2025-11-18 01:43:00,2026-07-02 17:56:00,seat_contraction
+sub_000218,3,acc_00197,pln_growth,month,82,USD,59,0.2,3870.4,2026-07-02 17:56:00,,seat_expansion
+sub_000219,1,acc_00198,pln_starter,month,4,EUR,27,0,108,2025-10-02 11:03:00,,new
+sub_000220,1,acc_00199,pln_growth,month,73,EUR,55,0,4015,2025-10-17 05:32:00,2025-12-30 12:13:00,new
+sub_000220,2,acc_00199,pln_growth,month,84,EUR,55,0,4620,2025-12-30 12:13:00,2026-08-27 13:24:00,seat_expansion
+sub_000220,3,acc_00199,pln_growth,month,123,EUR,55,0,6765,2026-08-27 13:24:00,,seat_expansion
+sub_000221,1,acc_00200,pln_growth,month,40,USD,59,0.2,1888.0,2025-10-10 09:54:00,2026-02-17 06:49:00,new
+sub_000221,2,acc_00200,pln_enterprise,month,40,USD,99,0.2,3168.0,2026-02-17 06:49:00,,plan_upgrade
+sub_000222,1,acc_00201,pln_growth,year,64,GBP,39.95,0.2,2045.44,2025-10-25 20:02:00,,new
+sub_000223,1,acc_00202,pln_starter,month,11,USD,29,0,319,2025-10-07 18:12:00,2026-06-07 12:36:00,new
+sub_000223,2,acc_00202,pln_starter,month,14,USD,29,0,406,2026-06-07 12:36:00,,seat_expansion
+sub_000224,1,acc_00203,pln_starter,month,7,USD,29,0,203,2025-10-03 10:59:00,,new
+sub_000225,1,acc_00204,pln_growth,month,29,USD,59,0,1711,2025-10-29 11:04:00,2026-01-29 18:26:00,new
+sub_000226,1,acc_00204,pln_growth,month,26,USD,59,0,1534,2026-08-11 05:03:00,,reactivation
+sub_000227,1,acc_00205,pln_growth,month,49,USD,59,0,2891,2025-10-01 09:24:00,2026-04-05 03:15:00,new
+sub_000227,2,acc_00205,pln_enterprise,month,49,USD,99,0,4851,2026-04-05 03:15:00,2026-06-01 23:51:00,plan_upgrade
+sub_000227,3,acc_00205,pln_enterprise,month,61,USD,99,0,6039,2026-06-01 23:51:00,,seat_expansion
+sub_000228,1,acc_00206,pln_growth,month,39,USD,59,0,2301,2025-10-17 00:05:00,2026-03-29 21:16:00,new
+sub_000229,1,acc_00207,pln_growth,year,76,USD,50.15,0,3811.4,2025-10-20 21:04:00,2025-12-12 13:29:00,new
+sub_000229,2,acc_00207,pln_growth,year,94,USD,50.15,0,4714.1,2025-12-12 13:29:00,,seat_expansion
+sub_000230,1,acc_00208,pln_starter,month,10,USD,29,0,290,2025-10-06 15:42:00,2025-12-10 20:10:00,new
+sub_000231,1,acc_00209,pln_starter,month,11,USD,29,0,319,2025-10-07 10:44:00,,new
+sub_000232,1,acc_00210,pln_starter,month,15,USD,29,0,435,2025-10-20 19:07:00,2025-11-09 06:09:00,new
+sub_000232,2,acc_00210,pln_starter,month,17,USD,29,0,493,2025-11-09 06:09:00,2026-08-02 10:35:00,seat_expansion
+sub_000232,3,acc_00210,pln_starter,month,20,USD,29,0,580,2026-08-02 10:35:00,,seat_expansion
+sub_000233,1,acc_00211,pln_starter,month,4,USD,29,0,116,2025-10-17 05:45:00,2026-05-27 22:14:00,new
+sub_000233,2,acc_00211,pln_starter,month,3,USD,29,0,87,2026-05-27 22:14:00,,seat_contraction
+sub_000234,1,acc_00212,pln_growth,year,62,USD,50.15,0,3109.3,2025-10-05 17:00:00,2026-09-27 05:55:00,new
+sub_000234,2,acc_00212,pln_growth,year,81,USD,50.15,0,4062.15,2026-09-27 05:55:00,,seat_expansion
+sub_000235,1,acc_00213,pln_starter,month,4,EUR,27,0,108,2025-10-20 09:50:00,2026-05-25 01:57:00,new
+sub_000235,2,acc_00213,pln_growth,month,4,EUR,55,0,220,2026-05-25 01:57:00,,plan_upgrade
+sub_000236,1,acc_00214,pln_growth,month,20,USD,59,0,1180,2025-10-01 01:31:00,,new
+sub_000237,1,acc_00215,pln_growth,month,32,USD,59,0,1888,2025-10-28 20:09:00,2026-09-26 16:51:00,new
+sub_000238,1,acc_00216,pln_starter,year,9,USD,24.65,0.1,199.66,2025-10-22 02:04:00,2026-02-11 11:01:00,new
+sub_000238,2,acc_00216,pln_starter,year,12,USD,24.65,0.1,266.22,2026-02-11 11:01:00,,seat_expansion
+sub_000239,1,acc_00217,pln_starter,month,11,GBP,23,0,253,2025-10-24 10:15:00,2025-11-05 18:55:00,new
+sub_000240,1,acc_00217,pln_starter,month,9,GBP,23,0,207,2026-01-17 14:04:00,2026-04-19 03:44:00,reactivation
+sub_000240,2,acc_00217,pln_starter,month,7,GBP,23,0,161,2026-04-19 03:44:00,2026-06-20 10:27:00,seat_contraction
+sub_000240,3,acc_00217,pln_growth,month,7,GBP,47,0,329,2026-06-20 10:27:00,2026-09-25 23:51:00,plan_upgrade
+sub_000241,1,acc_00218,pln_starter,month,14,USD,29,0,406,2025-10-31 19:36:00,,new
+sub_000242,1,acc_00219,pln_starter,year,13,EUR,22.95,0.1,268.51,2025-10-04 05:24:00,,new
+sub_000243,1,acc_00220,pln_starter,month,4,USD,29,0,116,2025-10-17 09:31:00,,new
+sub_000244,1,acc_00221,pln_starter,year,7,USD,24.65,0,172.55,2025-10-20 13:42:00,,new
+sub_000245,1,acc_00222,pln_starter,year,7,USD,24.65,0,172.55,2025-11-15 17:37:00,2026-07-22 18:03:00,new
+sub_000245,2,acc_00222,pln_growth,year,7,USD,50.15,0,351.05,2026-07-22 18:03:00,,plan_upgrade
+sub_000246,1,acc_00223,pln_starter,month,15,EUR,27,0,405,2025-11-12 07:09:00,,new
+sub_000247,1,acc_00224,pln_growth,month,24,USD,59,0.1,1274.4,2025-11-17 19:24:00,,new
+sub_000248,1,acc_00225,pln_starter,month,13,USD,29,0,377,2025-11-10 05:33:00,2026-01-31 06:38:00,new
+sub_000249,1,acc_00226,pln_starter,month,3,USD,29,0,87,2025-11-17 00:32:00,,new
+sub_000250,1,acc_00227,pln_enterprise,year,88,GBP,67.15,0,5909.2,2025-11-14 12:24:00,2026-08-28 15:04:00,new
+sub_000250,2,acc_00227,pln_enterprise,year,110,GBP,67.15,0,7386.5,2026-08-28 15:04:00,,seat_expansion
+sub_000251,1,acc_00228,pln_growth,year,56,USD,50.15,0,2808.4,2025-11-21 16:23:00,2026-07-01 04:12:00,new
+sub_000251,2,acc_00228,pln_growth,year,66,USD,50.15,0,3309.9,2026-07-01 04:12:00,,seat_expansion
+sub_000252,1,acc_00229,pln_starter,month,12,GBP,23,0,276,2025-11-30 05:59:00,,new
+sub_000253,1,acc_00230,pln_starter,month,10,USD,29,0,290,2025-11-13 13:36:00,,new
+sub_000254,1,acc_00231,pln_free,month,5,USD,0,0,0,2025-11-12 21:43:00,2026-02-01 06:50:00,free_signup
+sub_000255,1,acc_00231,pln_starter,month,5,USD,29,0,145,2026-02-01 06:50:00,,free_to_paid
+sub_000256,1,acc_00232,pln_free,month,6,EUR,0,0,0,2025-11-30 07:50:00,,free_signup
+sub_000257,1,acc_00233,pln_starter,year,4,USD,24.65,0,98.6,2025-11-07 15:41:00,,new
+sub_000258,1,acc_00234,pln_starter,month,8,USD,29,0,232,2025-11-24 05:26:00,2026-07-31 23:37:00,new
+sub_000258,2,acc_00234,pln_starter,month,11,USD,29,0,319,2026-07-31 23:37:00,2026-08-11 00:26:00,seat_expansion
+sub_000258,3,acc_00234,pln_starter,month,8,USD,29,0,232,2026-08-11 00:26:00,,seat_contraction
+sub_000259,1,acc_00235,pln_growth,year,15,EUR,46.75,0,701.25,2025-11-17 07:02:00,2026-03-19 06:34:00,new
+sub_000259,2,acc_00235,pln_growth,year,19,EUR,46.75,0,888.25,2026-03-19 06:34:00,2026-07-05 23:46:00,seat_expansion
+sub_000259,3,acc_00235,pln_growth,year,26,EUR,46.75,0,1215.5,2026-07-05 23:46:00,,seat_expansion
+sub_000260,1,acc_00236,pln_starter,month,4,USD,29,0,116,2025-11-05 03:54:00,,new
+sub_000261,1,acc_00237,pln_starter,month,15,GBP,23,0,345,2025-11-24 07:53:00,2026-01-12 00:42:00,new
+sub_000262,1,acc_00238,pln_starter,month,7,USD,29,0,203,2025-11-18 23:48:00,2026-07-10 10:11:00,new
+sub_000263,1,acc_00239,pln_starter,month,11,USD,29,0.1,287.1,2025-11-09 09:53:00,2026-01-30 13:05:00,new
+sub_000263,2,acc_00239,pln_starter,month,9,USD,29,0.1,234.9,2026-01-30 13:05:00,2026-02-03 03:37:00,seat_contraction
+sub_000263,3,acc_00239,pln_starter,month,6,USD,29,0.1,156.6,2026-02-03 03:37:00,2026-03-26 11:25:00,seat_contraction
+sub_000263,4,acc_00239,pln_starter,month,4,USD,29,0.1,104.4,2026-03-26 11:25:00,2026-09-07 23:45:00,seat_contraction
+sub_000264,1,acc_00240,pln_growth,year,32,USD,50.15,0.2,1283.84,2025-11-07 19:42:00,2026-02-04 12:37:00,new
+sub_000264,2,acc_00240,pln_enterprise,year,32,USD,84.15,0.2,2154.24,2026-02-04 12:37:00,,plan_upgrade
+sub_000265,1,acc_00241,pln_growth,year,33,EUR,46.75,0,1542.75,2025-11-14 12:42:00,,new
+sub_000266,1,acc_00242,pln_growth,year,66,USD,50.15,0.2,2647.92,2025-11-17 08:44:00,2026-06-07 05:06:00,new
+sub_000267,1,acc_00243,pln_starter,year,8,USD,24.65,0,197.2,2025-11-20 18:36:00,,new
+sub_000268,1,acc_00244,pln_enterprise,year,208,USD,84.15,0.2,14002.56,2025-11-29 14:57:00,2026-01-27 15:52:00,new
+sub_000268,2,acc_00244,pln_enterprise,year,312,USD,84.15,0.2,21003.84,2026-01-27 15:52:00,2026-07-06 06:52:00,seat_expansion
+sub_000268,3,acc_00244,pln_enterprise,year,370,USD,84.15,0.2,24908.4,2026-07-06 06:52:00,,seat_expansion
+sub_000269,1,acc_00245,pln_growth,year,15,USD,50.15,0,752.25,2025-11-14 04:44:00,,new
+sub_000270,1,acc_00246,pln_growth,month,31,USD,59,0,1829,2025-11-25 17:29:00,2026-02-06 17:56:00,new
+sub_000270,2,acc_00246,pln_enterprise,month,31,USD,99,0,3069,2026-02-06 17:56:00,,plan_upgrade
+sub_000271,1,acc_00247,pln_free,month,15,GBP,0,0,0,2025-11-07 15:51:00,,free_signup
+sub_000272,1,acc_00248,pln_starter,month,9,EUR,27,0.1,218.7,2025-11-17 02:09:00,2025-12-09 07:24:00,new
+sub_000272,2,acc_00248,pln_starter,month,12,EUR,27,0.1,291.6,2025-12-09 07:24:00,2026-08-23 01:40:00,seat_expansion
+sub_000272,3,acc_00248,pln_starter,month,9,EUR,27,0.1,218.7,2026-08-23 01:40:00,,seat_contraction
+sub_000273,1,acc_00249,pln_growth,month,48,USD,59,0,2832,2025-11-17 03:56:00,2026-06-29 13:48:00,new
+sub_000273,2,acc_00249,pln_growth,month,60,USD,59,0,3540,2026-06-29 13:48:00,,seat_expansion
+sub_000274,1,acc_00250,pln_enterprise,year,135,USD,84.15,0.2,9088.2,2025-11-16 12:19:00,,new
+sub_000275,1,acc_00251,pln_growth,year,79,USD,50.15,0,3961.85,2025-11-11 07:02:00,,new
+sub_000276,1,acc_00252,pln_growth,year,44,USD,50.15,0.1,1985.94,2025-11-28 16:40:00,,new
+sub_000277,1,acc_00253,pln_starter,year,15,GBP,19.55,0,293.25,2025-12-22 14:04:00,,new
+sub_000278,1,acc_00254,pln_starter,month,13,USD,29,0,377,2025-12-07 07:41:00,2026-04-15 08:37:00,new
+sub_000279,1,acc_00255,pln_growth,year,46,EUR,46.75,0.2,1720.4,2025-12-17 09:09:00,2026-09-15 05:47:00,new
+sub_000279,2,acc_00255,pln_enterprise,year,46,EUR,78.2,0.2,2877.76,2026-09-15 05:47:00,,plan_upgrade
+sub_000280,1,acc_00256,pln_starter,month,3,USD,29,0,87,2025-12-29 16:08:00,,new
+sub_000281,1,acc_00257,pln_growth,month,76,USD,59,0,4484,2025-12-26 09:54:00,2026-02-02 03:53:00,new
+sub_000281,2,acc_00257,pln_growth,month,68,USD,59,0,4012,2026-02-02 03:53:00,2026-07-14 05:55:00,seat_contraction
+sub_000281,3,acc_00257,pln_growth,month,81,USD,59,0,4779,2026-07-14 05:55:00,,seat_expansion
+sub_000282,1,acc_00258,pln_free,month,12,USD,0,0,0,2025-12-16 23:40:00,2026-02-17 21:34:00,free_signup
+sub_000283,1,acc_00258,pln_starter,month,12,USD,29,0,348,2026-02-17 21:34:00,,free_to_paid
+sub_000284,1,acc_00259,pln_growth,year,72,USD,50.15,0.2,2888.64,2025-12-16 17:36:00,2026-01-31 05:55:00,new
+sub_000284,2,acc_00259,pln_growth,year,81,USD,50.15,0.2,3249.72,2026-01-31 05:55:00,2026-02-27 03:27:00,seat_expansion
+sub_000284,3,acc_00259,pln_growth,year,122,USD,50.15,0.2,4894.64,2026-02-27 03:27:00,,seat_expansion
+sub_000285,1,acc_00260,pln_growth,year,55,EUR,46.75,0,2571.25,2025-12-14 07:55:00,,new
+sub_000286,1,acc_00261,pln_starter,month,12,USD,29,0,348,2025-12-19 04:20:00,,new
+sub_000287,1,acc_00262,pln_growth,year,40,USD,50.15,0,2006.0,2025-12-30 05:15:00,2026-09-21 05:43:00,new
+sub_000288,1,acc_00263,pln_starter,month,10,USD,29,0,290,2025-12-22 11:48:00,,new
+sub_000289,1,acc_00264,pln_enterprise,year,167,USD,84.15,0.2,11242.44,2025-12-30 15:11:00,,new
+sub_000290,1,acc_00265,pln_growth,month,26,USD,59,0,1534,2025-12-07 16:53:00,2026-06-20 08:54:00,new
+sub_000290,2,acc_00265,pln_enterprise,month,26,USD,99,0,2574,2026-06-20 08:54:00,,plan_upgrade
+sub_000291,1,acc_00266,pln_starter,month,11,USD,29,0,319,2025-12-30 13:26:00,,new
+sub_000292,1,acc_00267,pln_starter,year,11,USD,24.65,0,271.15,2025-12-28 10:04:00,,new
+sub_000293,1,acc_00268,pln_enterprise,year,148,EUR,78.2,0,11573.6,2025-12-31 02:33:00,2026-02-03 16:15:00,new
+sub_000293,2,acc_00268,pln_enterprise,year,188,EUR,78.2,0,14701.6,2026-02-03 16:15:00,2026-09-05 19:05:00,seat_expansion
+sub_000293,3,acc_00268,pln_enterprise,year,246,EUR,78.2,0,19237.2,2026-09-05 19:05:00,,seat_expansion
+sub_000294,1,acc_00269,pln_growth,year,23,GBP,39.95,0,918.85,2025-12-18 05:45:00,,new
+sub_000295,1,acc_00270,pln_growth,month,35,USD,59,0,2065,2025-12-04 15:46:00,2026-05-19 05:28:00,new
+sub_000296,1,acc_00271,pln_starter,month,15,EUR,27,0,405,2025-12-01 21:48:00,,new
+sub_000297,1,acc_00272,pln_growth,month,36,GBP,47,0.2,1353.6,2025-12-12 05:13:00,,new
+sub_000298,1,acc_00273,pln_free,month,9,USD,0,0,0,2025-12-20 23:46:00,,free_signup
+sub_000299,1,acc_00274,pln_starter,year,5,EUR,22.95,0.1,103.28,2025-12-05 10:55:00,2026-04-30 06:45:00,new
+sub_000300,1,acc_00275,pln_starter,month,9,USD,29,0.1,234.9,2025-12-25 03:14:00,2026-02-03 23:49:00,new
+sub_000300,2,acc_00275,pln_growth,month,9,USD,59,0.1,477.9,2026-02-03 23:49:00,,plan_upgrade
+sub_000301,1,acc_00276,pln_growth,year,72,USD,50.15,0,3610.8,2025-12-02 03:01:00,2026-05-02 17:03:00,new
+sub_000302,1,acc_00276,pln_growth,month,58,USD,59,0,3422,2026-09-01 23:50:00,,reactivation
+sub_000303,1,acc_00277,pln_enterprise,year,134,USD,84.15,0,11276.1,2025-12-18 00:33:00,,new
+sub_000304,1,acc_00278,pln_growth,year,25,EUR,46.75,0,1168.75,2025-12-26 14:59:00,,new
+sub_000305,1,acc_00279,pln_growth,month,43,USD,59,0,2537,2025-12-10 20:53:00,,new
+sub_000306,1,acc_00280,pln_growth,year,29,EUR,46.75,0.1,1220.17,2025-12-30 17:51:00,2026-09-16 10:30:00,new
+sub_000306,2,acc_00280,pln_growth,year,42,EUR,46.75,0.1,1767.15,2026-09-16 10:30:00,,seat_expansion
+sub_000307,1,acc_00281,pln_starter,year,11,USD,24.65,0,271.15,2025-12-17 15:43:00,,new
+sub_000308,1,acc_00282,pln_starter,month,7,EUR,27,0.1,170.1,2025-12-30 14:37:00,2026-04-15 16:19:00,new
+sub_000309,1,acc_00283,pln_growth,year,79,USD,50.15,0,3961.85,2025-12-31 18:50:00,,new
+sub_000310,1,acc_00284,pln_free,month,5,USD,0,0,0,2026-01-25 22:01:00,2026-03-07 22:18:00,free_signup
+sub_000311,1,acc_00284,pln_starter,month,5,USD,29,0,145,2026-03-07 22:18:00,,free_to_paid
+sub_000312,1,acc_00285,pln_starter,month,11,USD,29,0.1,287.1,2026-01-27 10:39:00,2026-08-04 19:08:00,new
+sub_000312,2,acc_00285,pln_starter,month,9,USD,29,0.1,234.9,2026-08-04 19:08:00,2026-09-05 10:00:00,seat_contraction
+sub_000312,3,acc_00285,pln_starter,month,14,USD,29,0.1,365.4,2026-09-05 10:00:00,2026-09-20 10:00:00,seat_expansion
+sub_000312,4,acc_00285,pln_starter,month,9,USD,29,0.1,234.9,2026-09-20 10:00:00,,seat_contraction
+sub_000313,1,acc_00286,pln_starter,month,12,EUR,27,0,324,2026-01-11 07:26:00,2026-02-01 19:41:00,new
+sub_000314,1,acc_00287,pln_starter,month,8,USD,29,0,232,2026-01-14 01:20:00,2026-02-15 09:49:00,new
+sub_000314,2,acc_00287,pln_starter,month,10,USD,29,0,290,2026-02-15 09:49:00,2026-04-05 07:54:00,seat_expansion
+sub_000315,1,acc_00288,pln_starter,year,5,USD,24.65,0,123.25,2026-01-12 07:59:00,,new
+sub_000316,1,acc_00289,pln_starter,month,14,USD,29,0.1,365.4,2026-01-01 17:00:00,2026-04-26 08:28:00,new
+sub_000316,2,acc_00289,pln_growth,month,14,USD,59,0.1,743.4,2026-04-26 08:28:00,,plan_upgrade
+sub_000317,1,acc_00290,pln_growth,month,56,USD,59,0,3304,2026-01-06 09:08:00,,new
+sub_000318,1,acc_00291,pln_free,month,3,USD,0,0,0,2026-01-01 20:34:00,,free_signup
+sub_000319,1,acc_00292,pln_growth,year,65,USD,50.15,0.2,2607.8,2026-01-30 22:50:00,,new
+sub_000320,1,acc_00293,pln_starter,year,12,USD,24.65,0,295.8,2026-01-24 12:51:00,,new
+sub_000321,1,acc_00294,pln_starter,month,9,USD,29,0,261,2026-01-04 04:07:00,2026-03-19 17:59:00,new
+sub_000321,2,acc_00294,pln_starter,month,6,USD,29,0,174,2026-03-19 17:59:00,2026-04-04 00:11:00,seat_contraction
+sub_000321,3,acc_00294,pln_starter,month,4,USD,29,0,116,2026-04-04 00:11:00,2026-05-23 16:24:00,seat_contraction
+sub_000321,4,acc_00294,pln_starter,month,6,USD,29,0,174,2026-05-23 16:24:00,2026-06-27 20:38:00,seat_expansion
+sub_000321,5,acc_00294,pln_starter,month,8,USD,29,0,232,2026-06-27 20:38:00,2026-08-03 09:12:00,seat_expansion
+sub_000321,6,acc_00294,pln_starter,month,12,USD,29,0,348,2026-08-03 09:12:00,,seat_expansion
+sub_000322,1,acc_00295,pln_growth,year,15,USD,50.15,0,752.25,2026-01-10 13:55:00,,new
+sub_000323,1,acc_00296,pln_starter,month,11,USD,29,0.1,287.1,2026-01-18 06:27:00,2026-08-26 18:27:00,new
+sub_000323,2,acc_00296,pln_growth,month,11,USD,59,0.1,584.1,2026-08-26 18:27:00,,plan_upgrade
+sub_000324,1,acc_00297,pln_enterprise,year,117,USD,84.15,0,9845.55,2026-01-10 02:35:00,,new
+sub_000325,1,acc_00298,pln_free,month,9,EUR,0,0,0,2026-01-04 17:22:00,2026-06-19 00:46:00,free_signup
+sub_000326,1,acc_00298,pln_starter,month,9,EUR,27,0,243,2026-06-19 00:46:00,2026-09-06 06:52:00,free_to_paid
+sub_000326,2,acc_00298,pln_starter,month,6,EUR,27,0,162,2026-09-06 06:52:00,,seat_contraction
+sub_000327,1,acc_00299,pln_starter,month,14,EUR,27,0,378,2026-01-03 15:33:00,2026-05-05 10:00:00,new
+sub_000327,2,acc_00299,pln_starter,month,19,EUR,27,0,513,2026-05-05 10:00:00,2026-05-20 10:00:00,seat_expansion
+sub_000327,3,acc_00299,pln_starter,month,14,EUR,27,0,378,2026-05-20 10:00:00,,seat_contraction
+sub_000328,1,acc_00300,pln_growth,year,16,GBP,39.95,0.1,575.28,2026-01-05 06:02:00,,new
+sub_000329,1,acc_00301,pln_growth,month,60,GBP,47,0.2,2256.0,2026-01-25 23:49:00,2026-02-10 06:56:00,new
+sub_000329,2,acc_00301,pln_growth,month,51,GBP,47,0.2,1917.6,2026-02-10 06:56:00,2026-06-14 14:12:00,seat_contraction
+sub_000329,3,acc_00301,pln_growth,month,61,GBP,47,0.2,2293.6,2026-06-14 14:12:00,,seat_expansion
+sub_000330,1,acc_00302,pln_starter,month,3,USD,29,0,87,2026-01-12 12:10:00,2026-03-20 03:56:00,new
+sub_000330,2,acc_00302,pln_growth,month,3,USD,59,0,177,2026-03-20 03:56:00,,plan_upgrade
+sub_000331,1,acc_00303,pln_growth,year,16,USD,50.15,0.1,722.16,2026-01-06 14:57:00,2026-02-11 03:21:00,new
+sub_000331,2,acc_00303,pln_enterprise,year,16,USD,84.15,0.1,1211.76,2026-02-11 03:21:00,,plan_upgrade
+sub_000332,1,acc_00304,pln_growth,year,24,USD,50.15,0.2,962.88,2026-01-12 04:02:00,2026-09-23 07:30:00,new
+sub_000332,2,acc_00304,pln_growth,year,34,USD,50.15,0.2,1364.08,2026-09-23 07:30:00,,seat_expansion
+sub_000333,1,acc_00305,pln_starter,month,9,EUR,27,0,243,2026-01-31 11:55:00,2026-03-16 06:24:00,new
+sub_000334,1,acc_00306,pln_growth,month,20,EUR,55,0.1,990.0,2026-01-08 09:21:00,2026-04-29 03:05:00,new
+sub_000334,2,acc_00306,pln_growth,month,26,EUR,55,0.1,1287.0,2026-04-29 03:05:00,2026-05-29 21:21:00,seat_expansion
+sub_000334,3,acc_00306,pln_growth,month,39,EUR,55,0.1,1930.5,2026-05-29 21:21:00,,seat_expansion
+sub_000335,1,acc_00307,pln_starter,month,15,USD,29,0,435,2026-01-23 19:08:00,2026-02-07 13:44:00,new
+sub_000336,1,acc_00308,pln_starter,month,8,EUR,27,0,216,2026-01-30 16:50:00,,new
+sub_000337,1,acc_00309,pln_free,month,14,USD,0,0,0,2026-01-29 09:55:00,,free_signup
+sub_000338,1,acc_00310,pln_starter,month,9,USD,29,0,261,2026-01-09 20:13:00,,new
+sub_000339,1,acc_00311,pln_starter,month,9,USD,29,0,261,2026-01-26 19:14:00,2026-07-31 05:37:00,new
+sub_000339,2,acc_00311,pln_starter,month,7,USD,29,0,203,2026-07-31 05:37:00,,seat_contraction
+sub_000340,1,acc_00312,pln_starter,year,9,USD,24.65,0,221.85,2026-01-29 11:53:00,,new
+sub_000341,1,acc_00313,pln_starter,year,13,USD,24.65,0,320.45,2026-02-27 03:05:00,,new
+sub_000342,1,acc_00314,pln_growth,month,32,USD,59,0,1888,2026-02-19 21:24:00,,new
+sub_000343,1,acc_00315,pln_growth,year,79,USD,50.15,0,3961.85,2026-02-14 11:36:00,2026-04-23 00:36:00,new
+sub_000343,2,acc_00315,pln_growth,year,114,USD,50.15,0,5717.1,2026-04-23 00:36:00,2026-09-28 08:08:00,seat_expansion
+sub_000343,3,acc_00315,pln_enterprise,year,114,USD,84.15,0,9593.1,2026-09-28 08:08:00,,plan_upgrade
+sub_000344,1,acc_00316,pln_starter,month,4,USD,29,0,116,2026-02-22 08:41:00,2026-07-21 21:46:00,new
+sub_000345,1,acc_00317,pln_starter,month,11,USD,29,0,319,2026-02-07 11:52:00,,new
+sub_000346,1,acc_00318,pln_growth,month,18,EUR,55,0.1,891.0,2026-02-18 02:01:00,2026-05-10 07:36:00,new
+sub_000346,2,acc_00318,pln_growth,month,21,EUR,55,0.1,1039.5,2026-05-10 07:36:00,,seat_expansion
+sub_000347,1,acc_00319,pln_enterprise,year,395,USD,84.15,0.2,26591.4,2026-02-05 05:09:00,2026-07-15 01:32:00,new
+sub_000347,2,acc_00319,pln_enterprise,year,465,USD,84.15,0.2,31303.8,2026-07-15 01:32:00,,seat_expansion
+sub_000348,1,acc_00320,pln_starter,month,4,USD,29,0,116,2026-02-28 17:14:00,,new
+sub_000349,1,acc_00321,pln_growth,month,62,EUR,55,0.1,3069.0,2026-02-12 12:03:00,2026-04-21 03:34:00,new
+sub_000349,2,acc_00321,pln_growth,month,44,EUR,55,0.1,2178.0,2026-04-21 03:34:00,2026-06-22 10:14:00,seat_contraction
+sub_000350,1,acc_00322,pln_starter,month,7,EUR,27,0,189,2026-02-27 23:30:00,,new
+sub_000351,1,acc_00323,pln_growth,month,32,USD,59,0,1888,2026-02-06 21:00:00,,new
+sub_000352,1,acc_00324,pln_growth,month,80,USD,59,0.2,3776.0,2026-02-20 02:40:00,2026-07-14 17:29:00,new
+sub_000352,2,acc_00324,pln_growth,month,98,USD,59,0.2,4625.6,2026-07-14 17:29:00,,seat_expansion
+sub_000353,1,acc_00325,pln_starter,year,10,EUR,22.95,0.1,206.55,2026-02-19 23:24:00,,new
+sub_000354,1,acc_00326,pln_starter,month,7,USD,29,0,203,2026-02-12 09:26:00,,new
+sub_000355,1,acc_00327,pln_growth,year,46,EUR,46.75,0,2150.5,2026-02-22 17:41:00,2026-08-10 08:36:00,new
+sub_000355,2,acc_00327,pln_growth,year,57,EUR,46.75,0,2664.75,2026-08-10 08:36:00,,seat_expansion
+sub_000356,1,acc_00328,pln_starter,month,11,EUR,27,0,297,2026-02-25 03:13:00,,new
+sub_000357,1,acc_00329,pln_starter,year,13,EUR,22.95,0,298.35,2026-02-08 06:19:00,2026-06-26 20:20:00,new
+sub_000357,2,acc_00329,pln_starter,year,19,EUR,22.95,0,436.05,2026-06-26 20:20:00,,seat_expansion
+sub_000358,1,acc_00330,pln_growth,year,44,USD,50.15,0,2206.6,2026-02-09 06:02:00,,new
+sub_000359,1,acc_00331,pln_starter,month,10,USD,29,0,290,2026-02-24 22:07:00,,new
+sub_000360,1,acc_00332,pln_starter,month,3,GBP,23,0,69,2026-02-23 05:10:00,,new
+sub_000361,1,acc_00333,pln_growth,month,47,USD,59,0,2773,2026-02-02 18:50:00,2026-09-27 15:18:00,new
+sub_000361,2,acc_00333,pln_growth,month,67,USD,59,0,3953,2026-09-27 15:18:00,,seat_expansion
+sub_000362,1,acc_00334,pln_starter,year,5,USD,24.65,0,123.25,2026-02-16 12:47:00,2026-07-18 06:12:00,new
+sub_000362,2,acc_00334,pln_starter,year,7,USD,24.65,0,172.55,2026-07-18 06:12:00,,seat_expansion
+sub_000363,1,acc_00335,pln_starter,month,13,EUR,27,0.1,315.9,2026-02-15 00:51:00,,new
+sub_000364,1,acc_00336,pln_starter,year,3,EUR,22.95,0,68.85,2026-02-10 03:04:00,,new
+sub_000365,1,acc_00337,pln_starter,month,7,EUR,27,0,189,2026-02-07 23:06:00,,new
+sub_000366,1,acc_00338,pln_growth,year,76,GBP,39.95,0,3036.2,2026-02-06 18:59:00,,new
+sub_000367,1,acc_00339,pln_starter,month,10,GBP,23,0,230,2026-02-16 16:58:00,2026-07-08 13:27:00,new
+sub_000367,2,acc_00339,pln_starter,month,14,GBP,23,0,322,2026-07-08 13:27:00,,seat_expansion
+sub_000368,1,acc_00340,pln_free,month,15,USD,0,0,0,2026-02-01 11:35:00,,free_signup
+sub_000369,1,acc_00341,pln_starter,month,9,EUR,27,0,243,2026-02-17 19:57:00,,new
+sub_000370,1,acc_00342,pln_starter,month,10,GBP,23,0,230,2026-02-11 22:48:00,2026-04-29 17:33:00,new
+sub_000371,1,acc_00343,pln_enterprise,year,334,EUR,78.2,0,26118.8,2026-03-14 18:54:00,,new
+sub_000372,1,acc_00344,pln_growth,year,53,EUR,46.75,0.1,2229.97,2026-03-20 00:28:00,2026-04-01 17:50:00,new
+sub_000372,2,acc_00344,pln_growth,year,65,EUR,46.75,0.1,2734.88,2026-04-01 17:50:00,,seat_expansion
+sub_000373,1,acc_00345,pln_growth,month,80,USD,59,0,4720,2026-03-19 17:01:00,2026-09-29 17:36:00,new
+sub_000373,2,acc_00345,pln_growth,month,116,USD,59,0,6844,2026-09-29 17:36:00,,seat_expansion
+sub_000374,1,acc_00346,pln_enterprise,year,80,EUR,78.2,0,6256.0,2026-03-08 00:09:00,,new
+sub_000375,1,acc_00347,pln_growth,year,30,USD,50.15,0,1504.5,2026-03-21 01:01:00,2026-05-16 08:42:00,new
+sub_000375,2,acc_00347,pln_growth,year,39,USD,50.15,0,1955.85,2026-05-16 08:42:00,,seat_expansion
+sub_000376,1,acc_00348,pln_growth,year,18,USD,50.15,0,902.7,2026-03-01 10:15:00,,new
+sub_000377,1,acc_00349,pln_growth,year,35,USD,50.15,0,1755.25,2026-03-25 15:15:00,,new
+sub_000378,1,acc_00350,pln_starter,year,15,EUR,22.95,0,344.25,2026-03-10 08:30:00,,new
+sub_000379,1,acc_00351,pln_starter,month,13,USD,29,0.1,339.3,2026-03-04 16:13:00,2026-08-27 17:27:00,new
+sub_000379,2,acc_00351,pln_growth,month,13,USD,59,0.1,690.3,2026-08-27 17:27:00,,plan_upgrade
+sub_000380,1,acc_00352,pln_growth,year,76,USD,50.15,0.1,3430.26,2026-03-22 15:12:00,2026-08-19 18:37:00,new
+sub_000380,2,acc_00352,pln_growth,year,105,USD,50.15,0.1,4739.18,2026-08-19 18:37:00,,seat_expansion
+sub_000381,1,acc_00353,pln_starter,month,5,USD,29,0,145,2026-03-23 02:34:00,,new
+sub_000382,1,acc_00354,pln_starter,month,11,USD,29,0.1,287.1,2026-03-20 21:57:00,2026-04-11 18:33:00,new
+sub_000382,2,acc_00354,pln_starter,month,17,USD,29,0.1,443.7,2026-04-11 18:33:00,,seat_expansion
+sub_000383,1,acc_00355,pln_starter,month,10,USD,29,0,290,2026-03-03 08:58:00,,new
+sub_000384,1,acc_00356,pln_growth,year,55,USD,50.15,0,2758.25,2026-03-18 04:54:00,2026-06-11 01:56:00,new
+sub_000384,2,acc_00356,pln_enterprise,year,55,USD,84.15,0,4628.25,2026-06-11 01:56:00,,plan_upgrade
+sub_000385,1,acc_00357,pln_free,month,8,USD,0,0,0,2026-03-07 11:15:00,,free_signup
+sub_000386,1,acc_00358,pln_starter,month,5,EUR,27,0,135,2026-03-26 03:06:00,2026-04-06 17:38:00,new
+sub_000387,1,acc_00358,pln_starter,month,3,EUR,27,0,81,2026-08-30 07:18:00,,reactivation
+sub_000388,1,acc_00359,pln_growth,year,48,EUR,46.75,0,2244.0,2026-03-11 20:57:00,,new
+sub_000389,1,acc_00360,pln_starter,month,11,USD,29,0,319,2026-03-23 21:55:00,,new
+sub_000390,1,acc_00361,pln_starter,year,10,EUR,22.95,0,229.5,2026-03-25 01:12:00,,new
+sub_000391,1,acc_00362,pln_starter,year,7,EUR,22.95,0,160.65,2026-03-06 17:08:00,2026-04-21 11:28:00,new
+sub_000391,2,acc_00362,pln_starter,year,8,EUR,22.95,0,183.6,2026-04-21 11:28:00,,seat_expansion
+sub_000392,1,acc_00363,pln_growth,year,74,GBP,39.95,0.2,2365.04,2026-03-23 19:19:00,,new
+sub_000393,1,acc_00364,pln_starter,month,14,USD,29,0,406,2026-03-13 06:03:00,2026-09-15 15:38:00,new
+sub_000393,2,acc_00364,pln_starter,month,16,USD,29,0,464,2026-09-15 15:38:00,,seat_expansion
+sub_000394,1,acc_00365,pln_growth,year,64,USD,50.15,0,3209.6,2026-03-18 12:36:00,,new
+sub_000395,1,acc_00366,pln_enterprise,month,152,USD,99,0,15048,2026-03-21 12:00:00,2026-09-22 04:17:00,new
+sub_000395,2,acc_00366,pln_enterprise,month,225,USD,99,0,22275,2026-09-22 04:17:00,,seat_expansion
+sub_000396,1,acc_00367,pln_starter,month,12,USD,29,0,348,2026-03-14 17:56:00,2026-07-17 08:19:00,new
+sub_000396,2,acc_00367,pln_starter,month,14,USD,29,0,406,2026-07-17 08:19:00,,seat_expansion
+sub_000397,1,acc_00368,pln_starter,month,11,EUR,27,0,297,2026-03-31 23:40:00,2026-08-03 05:12:00,new
+sub_000398,1,acc_00369,pln_free,month,12,USD,0,0,0,2026-03-13 07:50:00,,free_signup
+sub_000399,1,acc_00370,pln_starter,month,10,GBP,23,0.1,207.0,2026-03-25 23:40:00,2026-05-01 17:50:00,new
+sub_000399,2,acc_00370,pln_starter,month,8,GBP,23,0.1,165.6,2026-05-01 17:50:00,,seat_contraction
+sub_000400,1,acc_00371,pln_starter,month,7,USD,29,0,203,2026-03-03 03:33:00,2026-06-12 06:20:00,new
+sub_000400,2,acc_00371,pln_starter,month,9,USD,29,0,261,2026-06-12 06:20:00,,seat_expansion
+sub_000401,1,acc_00372,pln_growth,month,72,USD,59,0,4248,2026-03-18 02:44:00,2026-09-03 05:39:00,new
+sub_000402,1,acc_00373,pln_growth,year,22,USD,50.15,0,1103.3,2026-03-11 11:36:00,,new
+sub_000403,1,acc_00374,pln_enterprise,month,192,EUR,92,0,17664,2026-03-24 01:56:00,2026-05-16 23:47:00,new
+sub_000404,1,acc_00375,pln_starter,year,13,USD,24.65,0,320.45,2026-03-14 17:10:00,2026-04-13 13:45:00,new
+sub_000404,2,acc_00375,pln_starter,year,20,USD,24.65,0,493.0,2026-04-13 13:45:00,,seat_expansion
+sub_000405,1,acc_00376,pln_starter,year,3,EUR,22.95,0,68.85,2026-03-27 02:42:00,,new
+sub_000406,1,acc_00377,pln_starter,month,9,USD,29,0,261,2026-03-20 23:48:00,,new
+sub_000407,1,acc_00378,pln_starter,year,4,USD,24.65,0,98.6,2026-04-25 00:22:00,2026-09-08 15:09:00,new
+sub_000407,2,acc_00378,pln_growth,year,4,USD,50.15,0,200.6,2026-09-08 15:09:00,,plan_upgrade
+sub_000408,1,acc_00379,pln_starter,month,4,USD,29,0,116,2026-04-23 06:06:00,,new
+sub_000409,1,acc_00380,pln_growth,month,57,GBP,47,0,2679,2026-04-09 03:37:00,,new
+sub_000410,1,acc_00381,pln_growth,year,76,USD,50.15,0,3811.4,2026-04-07 21:38:00,2026-07-24 22:35:00,new
+sub_000410,2,acc_00381,pln_growth,year,95,USD,50.15,0,4764.25,2026-07-24 22:35:00,2026-08-21 08:42:00,seat_expansion
+sub_000410,3,acc_00381,pln_growth,year,112,USD,50.15,0,5616.8,2026-08-21 08:42:00,,seat_expansion
+sub_000411,1,acc_00382,pln_starter,year,10,EUR,22.95,0,229.5,2026-04-25 12:35:00,,new
+sub_000412,1,acc_00383,pln_growth,month,48,USD,59,0,2832,2026-04-01 15:59:00,,new
+sub_000413,1,acc_00384,pln_starter,month,3,USD,29,0,87,2026-04-28 19:55:00,,new
+sub_000414,1,acc_00385,pln_starter,month,9,EUR,27,0,243,2026-04-12 18:31:00,,new
+sub_000415,1,acc_00386,pln_starter,month,4,USD,29,0,116,2026-04-16 17:41:00,,new
+sub_000416,1,acc_00387,pln_starter,month,10,GBP,23,0,230,2026-04-14 08:08:00,,new
+sub_000417,1,acc_00388,pln_starter,month,11,USD,29,0.1,287.1,2026-04-25 11:49:00,2026-08-07 21:41:00,new
+sub_000417,2,acc_00388,pln_starter,month,14,USD,29,0.1,365.4,2026-08-07 21:41:00,,seat_expansion
+sub_000418,1,acc_00389,pln_growth,year,41,USD,50.15,0,2056.15,2026-04-06 15:13:00,,new
+sub_000419,1,acc_00390,pln_starter,month,5,USD,29,0.1,130.5,2026-04-27 13:37:00,2026-08-03 14:29:00,new
+sub_000419,2,acc_00390,pln_starter,month,8,USD,29,0.1,208.8,2026-08-03 14:29:00,,seat_expansion
+sub_000420,1,acc_00391,pln_starter,month,15,USD,29,0.1,391.5,2026-04-15 05:16:00,2026-06-08 18:02:00,new
+sub_000421,1,acc_00392,pln_starter,month,5,EUR,27,0,135,2026-04-20 07:47:00,,new
+sub_000422,1,acc_00393,pln_starter,month,14,EUR,27,0,378,2026-04-24 00:32:00,2026-05-02 17:00:00,new
+sub_000423,1,acc_00394,pln_starter,month,11,USD,29,0,319,2026-04-25 09:56:00,,new
+sub_000424,1,acc_00395,pln_growth,month,41,GBP,47,0,1927,2026-04-13 18:32:00,,new
+sub_000425,1,acc_00396,pln_enterprise,year,161,USD,84.15,0,13548.15,2026-04-13 06:04:00,,new
+sub_000426,1,acc_00397,pln_growth,year,44,USD,50.15,0.2,1765.28,2026-04-04 04:44:00,,new
+sub_000427,1,acc_00398,pln_growth,month,47,USD,59,0,2773,2026-04-19 14:40:00,2026-08-25 17:30:00,new
+sub_000427,2,acc_00398,pln_growth,month,60,USD,59,0,3540,2026-08-25 17:30:00,,seat_expansion
+sub_000428,1,acc_00399,pln_starter,month,11,USD,29,0.1,287.1,2026-04-09 01:56:00,,new
+sub_000429,1,acc_00400,pln_starter,month,15,EUR,27,0,405,2026-04-12 00:48:00,,new
+sub_000430,1,acc_00401,pln_starter,year,5,USD,24.65,0,123.25,2026-04-30 10:52:00,,new
+sub_000431,1,acc_00402,pln_starter,month,10,EUR,27,0,270,2026-04-23 01:26:00,2026-06-14 04:25:00,new
+sub_000431,2,acc_00402,pln_starter,month,7,EUR,27,0,189,2026-06-14 04:25:00,2026-08-11 07:29:00,seat_contraction
+sub_000431,3,acc_00402,pln_growth,month,7,EUR,55,0,385,2026-08-11 07:29:00,,plan_upgrade
+sub_000432,1,acc_00403,pln_starter,month,8,USD,29,0,232,2026-04-03 13:19:00,,new
+sub_000433,1,acc_00404,pln_starter,month,7,USD,29,0,203,2026-04-15 00:05:00,,new
+sub_000434,1,acc_00405,pln_starter,month,14,USD,29,0,406,2026-04-19 01:17:00,,new
+sub_000435,1,acc_00406,pln_starter,month,6,EUR,27,0,162,2026-04-10 07:29:00,,new
+sub_000436,1,acc_00407,pln_free,month,15,GBP,0,0,0,2026-04-05 14:30:00,2026-08-08 11:26:00,free_signup
+sub_000437,1,acc_00407,pln_starter,month,15,GBP,23,0,345,2026-08-08 11:26:00,,free_to_paid
+sub_000438,1,acc_00408,pln_enterprise,year,141,EUR,78.2,0,11026.2,2026-04-13 15:41:00,,new
+sub_000439,1,acc_00409,pln_starter,month,13,EUR,27,0,351,2026-04-01 23:54:00,,new
+sub_000440,1,acc_00410,pln_growth,month,30,USD,59,0.1,1593.0,2026-04-17 19:05:00,2026-09-23 22:37:00,new
+sub_000440,2,acc_00410,pln_growth,month,45,USD,59,0.1,2389.5,2026-09-23 22:37:00,,seat_expansion
+sub_000441,1,acc_00411,pln_starter,month,3,USD,29,0.1,78.3,2026-04-13 19:11:00,,new
+sub_000442,1,acc_00412,pln_starter,month,9,EUR,27,0,243,2026-04-11 20:33:00,2026-08-16 01:59:00,new
+sub_000442,2,acc_00412,pln_starter,month,7,EUR,27,0,189,2026-08-16 01:59:00,,seat_contraction
+sub_000443,1,acc_00413,pln_starter,month,8,USD,29,0,232,2026-05-14 17:11:00,,new
+sub_000444,1,acc_00414,pln_growth,year,17,USD,50.15,0,852.55,2026-05-13 12:08:00,,new
+sub_000445,1,acc_00415,pln_starter,month,5,EUR,27,0,135,2026-05-03 05:00:00,2026-08-18 08:36:00,new
+sub_000445,2,acc_00415,pln_starter,month,8,EUR,27,0,216,2026-08-18 08:36:00,2026-09-05 10:00:00,seat_expansion
+sub_000445,3,acc_00415,pln_starter,month,13,EUR,27,0,351,2026-09-05 10:00:00,2026-09-20 10:00:00,seat_expansion
+sub_000445,4,acc_00415,pln_starter,month,8,EUR,27,0,216,2026-09-20 10:00:00,,seat_contraction
+sub_000446,1,acc_00416,pln_starter,month,11,EUR,27,0,297,2026-05-12 07:44:00,2026-06-08 12:52:00,new
+sub_000447,1,acc_00417,pln_starter,month,6,USD,29,0,174,2026-05-08 16:23:00,,new
+sub_000448,1,acc_00418,pln_enterprise,month,117,USD,99,0.2,9266.4,2026-05-31 13:36:00,,new
+sub_000449,1,acc_00419,pln_starter,year,6,USD,24.65,0,147.9,2026-05-04 07:16:00,2026-08-03 09:19:00,new
+sub_000449,2,acc_00419,pln_growth,year,6,USD,50.15,0,300.9,2026-08-03 09:19:00,,plan_upgrade
+sub_000450,1,acc_00420,pln_starter,year,12,GBP,19.55,0,234.6,2026-05-10 23:41:00,,new
+sub_000451,1,acc_00421,pln_growth,year,38,USD,50.15,0,1905.7,2026-05-22 22:08:00,,new
+sub_000452,1,acc_00422,pln_enterprise,year,395,EUR,78.2,0,30889.0,2026-05-05 00:05:00,2026-08-08 09:31:00,new
+sub_000452,2,acc_00422,pln_enterprise,year,476,EUR,78.2,0,37223.2,2026-08-08 09:31:00,,seat_expansion
+sub_000453,1,acc_00423,pln_starter,year,3,USD,24.65,0,73.95,2026-05-16 15:31:00,,new
+sub_000454,1,acc_00424,pln_starter,year,12,USD,24.65,0,295.8,2026-05-06 09:54:00,2026-09-27 15:26:00,new
+sub_000454,2,acc_00424,pln_starter,year,17,USD,24.65,0,419.05,2026-09-27 15:26:00,,seat_expansion
+sub_000455,1,acc_00425,pln_growth,year,49,USD,50.15,0,2457.35,2026-05-23 07:42:00,2026-07-12 17:47:00,new
+sub_000455,2,acc_00425,pln_enterprise,year,49,USD,84.15,0,4123.35,2026-07-12 17:47:00,,plan_upgrade
+sub_000456,1,acc_00426,pln_starter,month,14,USD,29,0,406,2026-05-16 15:00:00,2026-06-25 07:38:00,new
+sub_000457,1,acc_00427,pln_growth,month,50,EUR,55,0,2750,2026-05-25 23:46:00,2026-06-13 10:10:00,new
+sub_000457,2,acc_00427,pln_growth,month,62,EUR,55,0,3410,2026-06-13 10:10:00,,seat_expansion
+sub_000458,1,acc_00428,pln_starter,month,14,USD,29,0.1,365.4,2026-05-02 19:10:00,,new
+sub_000459,1,acc_00429,pln_starter,month,3,USD,29,0.1,78.3,2026-05-21 12:02:00,,new
+sub_000460,1,acc_00430,pln_starter,year,9,USD,24.65,0,221.85,2026-05-19 10:46:00,2026-07-08 00:08:00,new
+sub_000461,1,acc_00431,pln_starter,month,3,USD,29,0,87,2026-05-30 12:33:00,2026-09-18 18:07:00,new
+sub_000462,1,acc_00432,pln_growth,month,74,EUR,55,0,4070,2026-05-01 19:16:00,2026-07-23 17:27:00,new
+sub_000462,2,acc_00432,pln_enterprise,month,74,EUR,92,0,6808,2026-07-23 17:27:00,,plan_upgrade
+sub_000463,1,acc_00433,pln_starter,month,13,EUR,27,0,351,2026-05-03 03:35:00,,new
+sub_000464,1,acc_00434,pln_free,month,5,USD,0,0,0,2026-05-14 00:28:00,,free_signup
+sub_000465,1,acc_00435,pln_free,month,15,USD,0,0,0,2026-05-03 14:14:00,,free_signup
+sub_000466,1,acc_00436,pln_starter,month,4,USD,29,0,116,2026-05-19 08:03:00,2026-06-24 14:07:00,new
+sub_000466,2,acc_00436,pln_starter,month,3,USD,29,0,87,2026-06-24 14:07:00,,seat_contraction
+sub_000467,1,acc_00437,pln_starter,month,13,USD,29,0,377,2026-05-16 08:40:00,,new
+sub_000468,1,acc_00438,pln_starter,year,3,EUR,22.95,0.1,61.96,2026-05-22 04:13:00,,new
+sub_000469,1,acc_00439,pln_free,month,12,USD,0,0,0,2026-05-18 10:41:00,,free_signup
+sub_000470,1,acc_00440,pln_starter,month,10,USD,29,0,290,2026-05-03 19:37:00,2026-07-05 10:00:00,new
+sub_000470,2,acc_00440,pln_starter,month,15,USD,29,0,435,2026-07-05 10:00:00,2026-07-20 10:00:00,seat_expansion
+sub_000470,3,acc_00440,pln_starter,month,10,USD,29,0,290,2026-07-20 10:00:00,,seat_contraction
+sub_000471,1,acc_00441,pln_starter,month,10,USD,29,0,290,2026-05-25 13:40:00,2026-09-26 14:00:00,new
+sub_000472,1,acc_00442,pln_growth,year,21,EUR,46.75,0.1,883.58,2026-05-03 23:52:00,,new
+sub_000473,1,acc_00443,pln_starter,month,12,USD,29,0,348,2026-05-26 12:56:00,,new
+sub_000474,1,acc_00444,pln_starter,month,15,EUR,27,0,405,2026-06-01 09:38:00,,new
+sub_000475,1,acc_00445,pln_enterprise,year,163,USD,84.15,0,13716.45,2026-06-11 07:16:00,,new
+sub_000476,1,acc_00446,pln_starter,month,9,USD,29,0,261,2026-06-17 20:34:00,,new
+sub_000477,1,acc_00447,pln_starter,year,10,EUR,22.95,0,229.5,2026-06-26 12:12:00,2026-09-14 10:22:00,new
+sub_000477,2,acc_00447,pln_starter,year,14,EUR,22.95,0,321.3,2026-09-14 10:22:00,,seat_expansion
+sub_000478,1,acc_00448,pln_free,month,9,USD,0,0,0,2026-06-25 11:56:00,,free_signup
+sub_000479,1,acc_00449,pln_starter,year,5,USD,24.65,0,123.25,2026-06-02 11:04:00,,new
+sub_000480,1,acc_00450,pln_starter,month,3,USD,29,0,87,2026-06-25 07:53:00,,new
+sub_000481,1,acc_00451,pln_starter,month,4,USD,29,0,116,2026-06-07 08:42:00,,new
+sub_000482,1,acc_00452,pln_starter,month,8,USD,29,0,232,2026-06-25 12:48:00,,new
+sub_000483,1,acc_00453,pln_starter,year,3,USD,24.65,0.1,66.55,2026-06-09 19:53:00,,new
+sub_000484,1,acc_00454,pln_starter,month,8,USD,29,0.1,208.8,2026-06-22 16:46:00,,new
+sub_000485,1,acc_00455,pln_growth,year,15,EUR,46.75,0,701.25,2026-06-27 15:18:00,,new
+sub_000486,1,acc_00456,pln_growth,month,73,EUR,55,0,4015,2026-06-18 18:53:00,,new
+sub_000487,1,acc_00457,pln_free,month,8,USD,0,0,0,2026-06-23 08:04:00,,free_signup
+sub_000488,1,acc_00458,pln_growth,year,53,EUR,46.75,0.2,1982.2,2026-06-03 11:37:00,,new
+sub_000489,1,acc_00459,pln_growth,month,57,USD,59,0.2,2690.4,2026-06-13 21:06:00,,new
+sub_000490,1,acc_00460,pln_starter,year,11,GBP,19.55,0.1,193.55,2026-06-02 14:37:00,,new
+sub_000491,1,acc_00461,pln_free,month,8,GBP,0,0,0,2026-06-11 14:32:00,,free_signup
+sub_000492,1,acc_00462,pln_starter,month,13,EUR,27,0,351,2026-06-11 10:40:00,,new
+sub_000493,1,acc_00463,pln_starter,month,6,USD,29,0,174,2026-06-21 22:06:00,,new
+sub_000494,1,acc_00464,pln_starter,month,15,USD,29,0,435,2026-06-17 09:16:00,2026-07-14 06:08:00,new
+sub_000494,2,acc_00464,pln_starter,month,20,USD,29,0,580,2026-07-14 06:08:00,,seat_expansion
+sub_000495,1,acc_00465,pln_growth,year,26,USD,50.15,0,1303.9,2026-06-17 12:35:00,,new
+sub_000496,1,acc_00466,pln_starter,month,5,USD,29,0,145,2026-06-10 09:50:00,,new
+sub_000497,1,acc_00467,pln_growth,month,50,USD,59,0.1,2655.0,2026-06-18 02:41:00,,new
+sub_000498,1,acc_00468,pln_enterprise,year,175,GBP,67.15,0,11751.25,2026-06-14 20:22:00,,new
+sub_000499,1,acc_00469,pln_starter,month,14,EUR,27,0,378,2026-06-23 07:17:00,2026-08-16 14:39:00,new
+sub_000500,1,acc_00470,pln_growth,month,65,USD,59,0.1,3451.5,2026-06-06 06:15:00,,new
+sub_000501,1,acc_00471,pln_starter,year,12,EUR,22.95,0,275.4,2026-06-16 21:28:00,2026-08-06 23:51:00,new
+sub_000502,1,acc_00472,pln_growth,month,44,USD,59,0,2596,2026-06-30 21:16:00,,new
+sub_000503,1,acc_00473,pln_starter,month,10,USD,29,0,290,2026-06-05 22:00:00,2026-08-04 23:44:00,new
+sub_000503,2,acc_00473,pln_starter,month,8,USD,29,0,232,2026-08-04 23:44:00,,seat_contraction
+sub_000504,1,acc_00474,pln_starter,month,12,USD,29,0.1,313.2,2026-06-01 15:51:00,2026-09-28 13:52:00,new
+sub_000504,2,acc_00474,pln_starter,month,15,USD,29,0.1,391.5,2026-09-28 13:52:00,,seat_expansion
+sub_000505,1,acc_00475,pln_starter,month,3,USD,29,0,87,2026-06-02 05:32:00,2026-08-14 15:02:00,new
+sub_000506,1,acc_00476,pln_starter,year,7,USD,24.65,0,172.55,2026-06-08 06:54:00,,new
+sub_000507,1,acc_00477,pln_starter,month,6,USD,29,0,174,2026-06-07 08:34:00,,new
+sub_000508,1,acc_00478,pln_starter,month,5,EUR,27,0.1,121.5,2026-06-01 05:16:00,,new
+sub_000509,1,acc_00479,pln_starter,month,10,GBP,23,0,230,2026-06-06 12:25:00,,new
+sub_000510,1,acc_00480,pln_starter,month,11,USD,29,0,319,2026-06-09 12:27:00,,new
+sub_000511,1,acc_00481,pln_starter,month,6,USD,29,0,174,2026-07-23 13:12:00,,new
+sub_000512,1,acc_00482,pln_free,month,13,USD,0,0,0,2026-07-12 07:43:00,,free_signup
+sub_000513,1,acc_00483,pln_starter,year,14,USD,24.65,0,345.1,2026-07-06 00:06:00,,new
+sub_000514,1,acc_00484,pln_starter,month,14,USD,29,0,406,2026-07-11 20:17:00,,new
+sub_000515,1,acc_00485,pln_growth,year,73,USD,50.15,0.1,3294.86,2026-07-04 05:41:00,,new
+sub_000516,1,acc_00486,pln_enterprise,year,379,USD,84.15,0,31892.85,2026-07-19 00:07:00,,new
+sub_000517,1,acc_00487,pln_growth,year,70,USD,50.15,0,3510.5,2026-07-27 18:34:00,,new
+sub_000518,1,acc_00488,pln_starter,month,9,USD,29,0,261,2026-07-02 04:33:00,2026-08-10 04:07:00,new
+sub_000518,2,acc_00488,pln_starter,month,13,USD,29,0,377,2026-08-10 04:07:00,,seat_expansion
+sub_000519,1,acc_00489,pln_starter,month,11,USD,29,0,319,2026-07-23 15:36:00,,new
+sub_000520,1,acc_00490,pln_enterprise,year,127,EUR,78.2,0.2,7945.12,2026-07-15 21:55:00,,new
+sub_000521,1,acc_00491,pln_starter,month,13,USD,29,0.1,339.3,2026-07-28 13:12:00,,new
+sub_000522,1,acc_00492,pln_growth,year,67,USD,50.15,0,3360.05,2026-07-02 13:38:00,,new
+sub_000523,1,acc_00493,pln_growth,year,18,EUR,46.75,0.2,673.2,2026-07-30 11:27:00,,new
+sub_000524,1,acc_00494,pln_starter,year,8,USD,24.65,0,197.2,2026-07-24 02:29:00,,new
+sub_000525,1,acc_00495,pln_growth,year,15,USD,50.15,0.1,677.02,2026-07-31 13:55:00,,new
+sub_000526,1,acc_00496,pln_free,month,5,USD,0,0,0,2026-07-28 21:10:00,,free_signup
+sub_000527,1,acc_00497,pln_starter,year,15,USD,24.65,0,369.75,2026-07-09 02:02:00,,new
+sub_000528,1,acc_00498,pln_starter,month,4,USD,29,0,116,2026-07-06 20:33:00,2026-09-30 17:01:00,new
+sub_000528,2,acc_00498,pln_starter,month,5,USD,29,0,145,2026-09-30 17:01:00,,seat_expansion
+sub_000529,1,acc_00499,pln_starter,month,10,USD,29,0,290,2026-07-05 16:48:00,2026-08-03 20:32:00,new
+sub_000529,2,acc_00499,pln_starter,month,15,USD,29,0,435,2026-08-03 20:32:00,,seat_expansion
+sub_000530,1,acc_00500,pln_enterprise,year,202,EUR,78.2,0.1,14216.76,2026-07-19 03:42:00,,new
+sub_000531,1,acc_00501,pln_starter,month,7,EUR,27,0,189,2026-07-24 00:53:00,,new
+sub_000532,1,acc_00502,pln_starter,month,12,USD,29,0,348,2026-07-15 13:05:00,2026-08-09 06:30:00,new
+sub_000533,1,acc_00503,pln_starter,month,11,EUR,27,0,297,2026-07-10 14:49:00,,new
+sub_000534,1,acc_00504,pln_starter,month,5,USD,29,0.1,130.5,2026-07-11 17:21:00,,new
+sub_000535,1,acc_00505,pln_starter,month,3,USD,29,0,87,2026-07-11 20:34:00,,new
+sub_000536,1,acc_00506,pln_starter,month,9,USD,29,0,261,2026-07-30 05:57:00,,new
+sub_000537,1,acc_00507,pln_starter,month,6,USD,29,0,174,2026-07-05 01:26:00,2026-09-05 10:00:00,new
+sub_000537,2,acc_00507,pln_starter,month,11,USD,29,0,319,2026-09-05 10:00:00,2026-09-20 10:00:00,seat_expansion
+sub_000537,3,acc_00507,pln_starter,month,6,USD,29,0,174,2026-09-20 10:00:00,,seat_contraction
+sub_000538,1,acc_00508,pln_starter,month,12,USD,29,0,348,2026-07-23 21:17:00,,new
+sub_000539,1,acc_00509,pln_enterprise,year,227,EUR,78.2,0.1,15976.26,2026-07-26 17:49:00,,new
+sub_000540,1,acc_00510,pln_growth,year,68,USD,50.15,0,3410.2,2026-07-23 13:21:00,,new
+sub_000541,1,acc_00511,pln_growth,month,64,USD,59,0.1,3398.4,2026-07-22 03:25:00,,new
+sub_000542,1,acc_00512,pln_growth,year,17,EUR,46.75,0,794.75,2026-07-30 15:05:00,,new
+sub_000543,1,acc_00513,pln_growth,month,76,USD,59,0.2,3587.2,2026-07-20 21:40:00,,new
+sub_000544,1,acc_00514,pln_starter,month,5,USD,29,0,145,2026-07-01 12:51:00,,new
+sub_000545,1,acc_00515,pln_growth,month,52,EUR,55,0,2860,2026-07-13 19:30:00,2026-09-14 20:08:00,new
+sub_000545,2,acc_00515,pln_growth,month,78,EUR,55,0,4290,2026-09-14 20:08:00,,seat_expansion
+sub_000546,1,acc_00516,pln_growth,month,44,USD,59,0,2596,2026-07-25 04:48:00,,new
+sub_000547,1,acc_00517,pln_starter,month,8,USD,29,0.1,208.8,2026-07-16 14:35:00,,new
+sub_000548,1,acc_00518,pln_free,month,14,EUR,0,0,0,2026-08-07 14:41:00,,free_signup
+sub_000549,1,acc_00519,pln_starter,year,3,EUR,22.95,0,68.85,2026-08-07 13:40:00,,new
+sub_000550,1,acc_00520,pln_growth,year,42,EUR,46.75,0.1,1767.15,2026-08-09 04:24:00,,new
+sub_000551,1,acc_00521,pln_growth,month,51,EUR,55,0.2,2244.0,2026-08-21 02:44:00,,new
+sub_000552,1,acc_00522,pln_starter,month,4,USD,29,0,116,2026-08-03 18:59:00,,new
+sub_000553,1,acc_00523,pln_growth,year,66,USD,50.15,0.2,2647.92,2026-08-21 02:03:00,,new
+sub_000554,1,acc_00524,pln_starter,month,9,USD,29,0,261,2026-08-15 10:22:00,,new
+sub_000555,1,acc_00525,pln_starter,year,14,USD,24.65,0,345.1,2026-08-22 03:25:00,,new
+sub_000556,1,acc_00526,pln_starter,year,6,USD,24.65,0,147.9,2026-08-13 14:22:00,2026-09-18 06:23:00,new
+sub_000556,2,acc_00526,pln_growth,year,6,USD,50.15,0,300.9,2026-09-18 06:23:00,,plan_upgrade
+sub_000557,1,acc_00527,pln_free,month,5,USD,0,0,0,2026-08-18 11:15:00,,free_signup
+sub_000558,1,acc_00528,pln_growth,year,41,USD,50.15,0,2056.15,2026-08-11 17:52:00,,new
+sub_000559,1,acc_00529,pln_starter,year,14,EUR,22.95,0,321.3,2026-08-26 20:14:00,,new
+sub_000560,1,acc_00530,pln_starter,month,10,USD,29,0,290,2026-08-01 17:58:00,,new
+sub_000561,1,acc_00531,pln_growth,year,22,USD,50.15,0,1103.3,2026-08-05 22:46:00,,new
+sub_000562,1,acc_00532,pln_starter,month,4,USD,29,0,116,2026-08-31 01:22:00,,new
+sub_000563,1,acc_00533,pln_growth,month,51,USD,59,0,3009,2026-08-02 19:39:00,,new
+sub_000564,1,acc_00534,pln_starter,month,6,EUR,27,0,162,2026-08-20 06:44:00,,new
+sub_000565,1,acc_00535,pln_growth,year,34,GBP,39.95,0,1358.3,2026-08-11 01:47:00,,new
+sub_000566,1,acc_00536,pln_starter,month,11,USD,29,0,319,2026-08-28 17:58:00,,new
+sub_000567,1,acc_00537,pln_starter,month,4,USD,29,0,116,2026-08-13 09:43:00,,new
+sub_000568,1,acc_00538,pln_free,month,11,USD,0,0,0,2026-08-16 21:08:00,,free_signup
+sub_000569,1,acc_00539,pln_starter,year,13,USD,24.65,0,320.45,2026-08-18 10:17:00,,new
+sub_000570,1,acc_00540,pln_growth,year,21,USD,50.15,0.2,842.52,2026-08-25 06:51:00,,new
+sub_000571,1,acc_00541,pln_free,month,13,USD,0,0,0,2026-08-31 08:04:00,,free_signup
+sub_000572,1,acc_00542,pln_starter,month,15,USD,29,0,435,2026-08-25 13:25:00,,new
+sub_000573,1,acc_00543,pln_growth,month,19,USD,59,0.2,896.8,2026-08-28 00:55:00,,new
+sub_000574,1,acc_00544,pln_starter,month,3,USD,29,0,87,2026-08-14 19:14:00,,new
+sub_000575,1,acc_00545,pln_starter,month,4,USD,29,0,116,2026-08-08 13:34:00,,new
+sub_000576,1,acc_00546,pln_starter,month,5,USD,29,0.1,130.5,2026-08-23 06:28:00,2026-09-10 18:37:00,new
+sub_000576,2,acc_00546,pln_growth,month,5,USD,59,0.1,265.5,2026-09-10 18:37:00,,plan_upgrade
+sub_000577,1,acc_00547,pln_free,month,8,USD,0,0,0,2026-08-11 19:53:00,2026-09-03 22:59:00,free_signup
+sub_000578,1,acc_00547,pln_starter,month,8,USD,29,0,232,2026-09-03 22:59:00,,free_to_paid
+sub_000579,1,acc_00548,pln_enterprise,year,259,USD,84.15,0.2,17435.88,2026-08-07 18:04:00,,new
+sub_000580,1,acc_00549,pln_growth,month,72,USD,59,0.1,3823.2,2026-08-20 05:16:00,2026-09-08 20:01:00,new
+sub_000580,2,acc_00549,pln_growth,month,97,USD,59,0.1,5150.7,2026-09-08 20:01:00,,seat_expansion
+sub_000581,1,acc_00550,pln_starter,month,9,GBP,23,0,207,2026-08-21 19:22:00,2026-09-26 15:40:00,new
+sub_000581,2,acc_00550,pln_starter,month,6,GBP,23,0,138,2026-09-26 15:40:00,,seat_contraction
+sub_000582,1,acc_00551,pln_growth,year,56,EUR,46.75,0,2618.0,2026-08-23 18:28:00,,new
+sub_000583,1,acc_00552,pln_growth,year,53,EUR,46.75,0,2477.75,2026-09-24 12:34:00,,new
+sub_000584,1,acc_00553,pln_starter,month,11,USD,29,0,319,2026-09-28 16:12:00,,new
+sub_000585,1,acc_00554,pln_growth,year,61,USD,50.15,0,3059.15,2026-09-13 09:33:00,,new
+sub_000586,1,acc_00555,pln_starter,month,14,USD,29,0.1,365.4,2026-09-20 17:13:00,,new
+sub_000587,1,acc_00556,pln_starter,year,3,EUR,22.95,0,68.85,2026-09-02 19:11:00,,new
+sub_000588,1,acc_00557,pln_starter,month,15,EUR,27,0,405,2026-09-24 15:58:00,,new
+sub_000589,1,acc_00558,pln_starter,month,5,USD,29,0,145,2026-09-05 22:44:00,,new
+sub_000590,1,acc_00559,pln_starter,month,15,USD,29,0,435,2026-09-25 15:39:00,,new
+sub_000591,1,acc_00560,pln_starter,year,14,USD,24.65,0,345.1,2026-09-05 17:27:00,,new
+sub_000592,1,acc_00561,pln_starter,month,6,USD,29,0,174,2026-09-25 13:02:00,,new
+sub_000593,1,acc_00562,pln_starter,year,6,EUR,22.95,0,137.7,2026-09-30 13:08:00,,new
+sub_000594,1,acc_00563,pln_starter,month,3,USD,29,0.1,78.3,2026-09-25 23:10:00,,new
+sub_000595,1,acc_00564,pln_starter,month,12,GBP,23,0,276,2026-09-08 02:38:00,,new
+sub_000596,1,acc_00565,pln_growth,year,42,EUR,46.75,0,1963.5,2026-09-05 21:45:00,,new
+sub_000597,1,acc_00566,pln_enterprise,year,204,USD,84.15,0,17166.6,2026-09-03 21:18:00,,new
+sub_000598,1,acc_00567,pln_free,month,14,USD,0,0,0,2026-09-12 14:24:00,,free_signup
+sub_000599,1,acc_00568,pln_starter,year,15,USD,24.65,0,369.75,2026-09-23 06:41:00,,new
+sub_000600,1,acc_00569,pln_starter,month,15,GBP,23,0,345,2026-09-14 04:43:00,,new
+sub_000601,1,acc_00570,pln_starter,month,12,GBP,23,0,276,2026-09-24 16:31:00,,new
+sub_000602,1,acc_00571,pln_starter,month,13,GBP,23,0.1,269.1,2026-09-12 04:36:00,,new
+sub_000603,1,acc_00572,pln_starter,month,10,USD,29,0,290,2026-09-06 00:08:00,,new
+sub_000604,1,acc_00573,pln_starter,month,15,EUR,27,0,405,2026-09-13 01:15:00,,new
+sub_000605,1,acc_00574,pln_growth,year,37,USD,50.15,0,1855.55,2026-09-14 17:32:00,,new
+sub_000606,1,acc_00575,pln_starter,month,15,USD,29,0,435,2026-09-08 17:42:00,,new
+sub_000607,1,acc_00576,pln_starter,month,14,EUR,27,0,378,2026-09-27 00:15:00,,new
+sub_000608,1,acc_00577,pln_growth,month,75,EUR,55,0.1,3712.5,2026-09-02 01:01:00,,new
+sub_000609,1,acc_00578,pln_growth,month,25,USD,59,0,1475,2026-09-07 14:00:00,,new
+sub_000610,1,acc_00579,pln_starter,month,10,EUR,27,0,270,2026-09-27 03:38:00,,new
+sub_000611,1,acc_00580,pln_growth,month,43,USD,59,0,2537,2026-09-05 23:25:00,,new
+sub_000612,1,acc_00581,pln_starter,month,9,USD,29,0,261,2026-09-27 01:10:00,,new
+sub_000613,1,acc_00582,pln_starter,month,13,USD,29,0,377,2026-09-04 02:51:00,,new
+sub_000614,1,acc_00583,pln_starter,month,11,USD,29,0,319,2026-09-01 08:24:00,,new
+sub_000615,1,acc_00584,pln_starter,month,12,USD,29,0,348,2026-09-30 20:14:00,,new
+sub_000616,1,acc_00585,pln_growth,month,33,USD,59,0,1947,2026-09-20 07:17:00,,new
+sub_000617,1,acc_00586,pln_starter,month,8,USD,29,0.1,208.8,2026-09-18 03:28:00,,new
+sub_000618,1,acc_00587,pln_growth,year,30,USD,50.15,0.2,1203.6,2026-09-15 19:38:00,,new
+sub_000619,1,acc_00588,pln_starter,year,6,GBP,19.55,0,117.3,2026-09-29 00:27:00,,new
+sub_000620,1,acc_00589,pln_free,month,10,USD,0,0,0,2026-09-25 13:06:00,,free_signup
+sub_000621,1,acc_00590,pln_starter,month,4,USD,29,0,116,2026-09-06 22:03:00,,new

@@ -1,0 +1,50 @@
+name: Metric change request
+description: Propose a new metric, change an existing one, or deprecate one (RFC-0001 §5).
+title: "[METRIC] <metric_name>: <short summary>"
+labels: ["metrics-governance", "triage"]
+body:
+  - type: dropdown
+    id: request_type
+    attributes:
+      label: Request type
+      options: [New metric, Logic change (alters history), New dimension / filter, Documentation only, Deprecation]
+    validations: {required: true}
+  - type: input
+    id: metric_name
+    attributes:
+      label: Metric name (snake_case)
+      placeholder: net_revenue_retention
+    validations: {required: true}
+  - type: textarea
+    id: business_question
+    attributes:
+      label: Business question and decision
+      description: Which decision will this metric drive, and who makes it?
+    validations: {required: true}
+  - type: textarea
+    id: definition
+    attributes:
+      label: Proposed definition
+      description: Plain-language definition, formula, inclusions, exclusions, and how it behaves at week / month / quarter grain.
+    validations: {required: true}
+  - type: textarea
+    id: edge_cases
+    attributes:
+      label: Edge cases
+      description: Refunds, currency, time zones, test data, reactivations, partial periods... Reference existing MLR-xxx rules where they apply.
+  - type: dropdown
+    id: tier
+    attributes:
+      label: Proposed tier
+      options: ["1 · Board", "2 · Operating", "3 · Component"]
+    validations: {required: true}
+  - type: input
+    id: owner
+    attributes:
+      label: Proposed business owner (role)
+    validations: {required: true}
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impact on history and consumers
+      description: For changes, the expected old vs new values for the last 6 closed months, and the dashboards/reports affected.

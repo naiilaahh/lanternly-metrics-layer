@@ -1,0 +1,49 @@
+name: metrics-layer-ci
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  governance:
+    name: Governance lint + catalog freshness
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install -r requirements.txt
+      - name: Lint metric governance metadata
+        run: python scripts/lint_metrics.py
+      - name: Catalog must be regenerated from YAML
+        run: |
+          python scripts/build_metrics_catalog.py
+          git diff --exit-code metrics_catalog/metrics_catalog.csv docs/metrics_catalog.md \
+            || (echo "::error::Catalog is stale. Run scripts/build_metrics_catalog.py and commit." && exit 1)
+
+  dbt:
+    name: dbt build + tests (Postgres)
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env: {POSTGRES_USER: postgres, POSTGRES_PASSWORD: postgres, POSTGRES_DB: lanternly}
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd pg_isready --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      DBT_PROFILES_DIR: .
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install -r requirements.txt
+      - run: cp profiles.example.yml profiles.yml
+      - run: dbt deps
+      - name: Validate semantic layer configs
+        run: |
+          dbt parse --target ci
+          mf validate-configs
+      - name: Build seeds, models and run every test (data, singular, unit)
+        run: dbt build --target ci

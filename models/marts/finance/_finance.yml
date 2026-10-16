@@ -1,0 +1,96 @@
+version: 2
+
+models:
+  - name: dim_accounts
+    description: Conformed account dimension (reportable accounts only). Every semantic model joins here through the `account` entity.
+    columns:
+      - name: account_id
+        data_tests: [unique, not_null]
+      - name: segment
+        description: Sales segment at sign-up. Static by design; re-segmentation is a governed change (RFC-0001 §5).
+      - name: customer_status
+        data_tests:
+          - accepted_values:
+              arguments: {values: ["paying", "churned", "free"]}
+
+  - name: fct_mrr
+    description: >
+      Account x month snapshot of contracted recurring revenue with the MRR movement
+      classification. Certified source for MRR, ARR, customer counts, the MRR waterfall,
+      logo churn and quick ratio. See MLR-001..007.
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments: {combination_of_columns: [account_id, month_start]}
+      - dbt_utils.expression_is_true:
+          arguments: {expression: "arr_usd = mrr_usd * 12"}
+      - dbt_utils.expression_is_true:
+          arguments: {expression: "new_mrr_usd >= 0 and expansion_mrr_usd >= 0 and contraction_mrr_usd >= 0 and churned_mrr_usd >= 0 and reactivation_mrr_usd >= 0"}
+    columns:
+      - name: account_month_id
+        data_tests: [unique, not_null]
+      - name: account_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments: {to: "ref('dim_accounts')", field: account_id}
+      - name: month_start
+        description: First day of the reporting month. The snapshot is taken at 00:00 UTC on the first day of the NEXT month.
+        data_tests: [not_null]
+      - name: mrr_usd
+        description: Contracted MRR at month end, net of recurring discounts, constant currency (planning rate).
+        data_tests: [not_null]
+      - name: movement_type
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments: {values: ["new", "expansion", "contraction", "churn", "reactivation", "retained", "inactive"]}
+      - name: fx_rebase_mrr_usd
+        description: Restatement of last month's MRR when the fiscal-year planning rate resets. Shown as its own bar in the waterfall, never as expansion/contraction.
+
+  - name: fct_retention_12m
+    description: Trailing-twelve-month retention cohort rows. Certified source for NRR and GRR (MLR-007).
+    data_tests:
+      - dbt_utils.expression_is_true:
+          arguments: {expression: "retained_mrr_capped_usd <= starting_mrr_usd and retained_mrr_capped_usd <= current_mrr_usd"}
+    columns:
+      - name: retention_row_id
+        data_tests: [unique, not_null]
+      - name: starting_mrr_usd
+        data_tests:
+          - dbt_utils.accepted_range:
+              arguments: {min_value: 0, inclusive: false}
+
+  - name: fct_revenue_monthly
+    description: Recognised (ratable) revenue and billings by account-month. Certified source for net revenue (MLR-001..003, MLR-006).
+    data_tests:
+      - dbt_utils.expression_is_true:
+          arguments: {expression: "abs(net_revenue_usd - (recognized_recurring_revenue_usd + non_recurring_revenue_usd - service_credits_usd)) < 0.000001"}
+    columns:
+      - name: account_month_id
+        data_tests: [unique, not_null]
+      - name: recognized_recurring_revenue_usd
+        data_tests:
+          - dbt_utils.accepted_range:
+              arguments: {min_value: 0}
+
+  - name: fct_company_costs_monthly
+    description: COGS, acquisition and retention costs by month. Only cost_type = 'acquisition' enters CAC (MLR-012).
+    columns:
+      - name: cost_line_id
+        data_tests: [unique, not_null]
+      - name: cost_type
+        data_tests:
+          - accepted_values:
+              arguments: {values: ["cogs", "acquisition", "retention"]}
+
+  - name: fct_unit_economics_monthly
+    description: Company-level unit economics with trailing windows (MLR-013, MLR-014). Certified source for LTV and LTV:CAC.
+    columns:
+      - name: month_start
+        data_tests: [unique, not_null]
+      - name: expected_lifetime_months
+        data_tests:
+          - dbt_utils.accepted_range:
+              arguments: {min_value: 0, max_value: 60}
+      - name: is_window_complete
+        description: False for the first five months, when the 6-month churn window is incomplete. Certified views filter these out.

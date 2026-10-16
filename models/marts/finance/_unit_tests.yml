@@ -1,0 +1,88 @@
+version: 2
+
+# dbt unit tests (dbt >= 1.8; project requires >= 1.10.8): fixed inputs -> expected outputs for the logic that most often
+# breaks silently. Run with `dbt test --select test_type:unit`.
+unit_tests:
+  - name: mrr_movement_classification
+    description: >
+      One account per movement type across a fiscal-year boundary, including a EUR account
+      with unchanged local MRR whose USD value moves when the planning rate resets (must be
+      'retained' with an FX rebase, never expansion).
+    model: fct_mrr
+    given:
+      - input: ref('int_accounts_reportable')
+        rows:
+          - {account_id: a_new,   billing_currency: USD}
+          - {account_id: a_exp,   billing_currency: USD}
+          - {account_id: a_con,   billing_currency: USD}
+          - {account_id: a_churn, billing_currency: USD}
+          - {account_id: a_react, billing_currency: USD}
+          - {account_id: a_eur,   billing_currency: EUR}
+      - input: ref('int_planning_fx_rates')
+        rows:
+          - {fiscal_year: 2025, currency: USD, usd_per_unit: 1.0}
+          - {fiscal_year: 2026, currency: USD, usd_per_unit: 1.0}
+          - {fiscal_year: 2025, currency: EUR, usd_per_unit: 1.08}
+          - {fiscal_year: 2026, currency: EUR, usd_per_unit: 1.10}
+      - input: ref('int_account_mrr_monthly')
+        rows:
+          - {account_id: a_new,   month_start: 2025-12-01, mrr_local: 0}
+          - {account_id: a_new,   month_start: 2026-01-01, mrr_local: 500}
+          - {account_id: a_exp,   month_start: 2025-12-01, mrr_local: 100}
+          - {account_id: a_exp,   month_start: 2026-01-01, mrr_local: 150}
+          - {account_id: a_con,   month_start: 2025-12-01, mrr_local: 100}
+          - {account_id: a_con,   month_start: 2026-01-01, mrr_local: 80}
+          - {account_id: a_churn, month_start: 2025-12-01, mrr_local: 300}
+          - {account_id: a_churn, month_start: 2026-01-01, mrr_local: 0}
+          - {account_id: a_react, month_start: 2025-11-01, mrr_local: 200}
+          - {account_id: a_react, month_start: 2025-12-01, mrr_local: 0}
+          - {account_id: a_react, month_start: 2026-01-01, mrr_local: 250}
+          - {account_id: a_eur,   month_start: 2025-12-01, mrr_local: 1000}
+          - {account_id: a_eur,   month_start: 2026-01-01, mrr_local: 1000}
+    expect:
+      rows:
+        - {account_id: a_new,   month_start: 2025-12-01, movement_type: inactive,     new_mrr_usd: 0,   expansion_mrr_usd: 0,  churned_mrr_usd: 0,   fx_rebase_mrr_usd: 0}
+        - {account_id: a_new,   month_start: 2026-01-01, movement_type: new,          new_mrr_usd: 500, expansion_mrr_usd: 0,  churned_mrr_usd: 0,   fx_rebase_mrr_usd: 0}
+        - {account_id: a_exp,   month_start: 2025-12-01, movement_type: new,          new_mrr_usd: 100, expansion_mrr_usd: 0,  churned_mrr_usd: 0,   fx_rebase_mrr_usd: 0}
+        - {account_id: a_exp,   month_start: 2026-01-01, movement_type: expansion,    new_mrr_usd: 0,   expansion_mrr_usd: 50, churned_mrr_usd: 0,   fx_rebase_mrr_usd: 0}
+        - {account_id: a_con,   month_start: 2025-12-01, movement_type: new,          new_mrr_usd: 100, expansion_mrr_usd: 0,  churned_mrr_usd: 0,   fx_rebase_mrr_usd: 0}
+        - {account_id: a_con,   month_start: 2026-01-01, movement_type: contraction,  new_mrr_usd: 0,   expansion_mrr_usd: 0,  churned_mrr_usd: 0,   fx_rebase_mrr_usd: 0}
+        - {account_id: a_churn, month_start: 2025-12-01, movement_type: new,          new_mrr_usd: 300, expansion_mrr_usd: 0,  churned_mrr_usd: 0,   fx_rebase_mrr_usd: 0}
+        - {account_id: a_churn, month_start: 2026-01-01, movement_type: churn,        new_mrr_usd: 0,   expansion_mrr_usd: 0,  churned_mrr_usd: 300, fx_rebase_mrr_usd: 0}
+        - {account_id: a_react, month_start: 2025-11-01, movement_type: new,          new_mrr_usd: 200, expansion_mrr_usd: 0,  churned_mrr_usd: 0,   fx_rebase_mrr_usd: 0}
+        - {account_id: a_react, month_start: 2025-12-01, movement_type: churn,        new_mrr_usd: 0,   expansion_mrr_usd: 0,  churned_mrr_usd: 200, fx_rebase_mrr_usd: 0}
+        - {account_id: a_react, month_start: 2026-01-01, movement_type: reactivation, new_mrr_usd: 0,   expansion_mrr_usd: 0,  churned_mrr_usd: 0,   fx_rebase_mrr_usd: 0}
+        - {account_id: a_eur,   month_start: 2025-12-01, movement_type: new,          new_mrr_usd: 1080, expansion_mrr_usd: 0, churned_mrr_usd: 0,   fx_rebase_mrr_usd: 0}
+        - {account_id: a_eur,   month_start: 2026-01-01, movement_type: retained,     new_mrr_usd: 0,   expansion_mrr_usd: 0,  churned_mrr_usd: 0,   fx_rebase_mrr_usd: 20}
+
+  - name: month_end_snapshot_nets_intra_month_changes
+    description: >
+      MLR-005. Account A upgrades on Jan 5 and downgrades back on Jan 20 -> January MRR is
+      unchanged. Account B upgrades on Jan 31 23:00 -> counts in January. Account C's
+      upgrade lands at 00:00 UTC Feb 1 exactly -> counts in February, not January.
+    model: int_account_mrr_monthly
+    overrides:
+      vars: {metrics_start_month: "2026-01-01", last_closed_month: "2026-02-01"}
+    given:
+      - input: ref('int_accounts_reportable')
+        rows:
+          - {account_id: A}
+          - {account_id: B}
+          - {account_id: C}
+      - input: ref('stg_subscription_versions')
+        rows:
+          - {account_id: A, mrr_local: 100, valid_from_utc: "2025-12-01 00:00:00", valid_to_utc: "2026-01-05 10:00:00"}
+          - {account_id: A, mrr_local: 150, valid_from_utc: "2026-01-05 10:00:00", valid_to_utc: "2026-01-20 10:00:00"}
+          - {account_id: A, mrr_local: 100, valid_from_utc: "2026-01-20 10:00:00", valid_to_utc: "9999-12-31 00:00:00"}
+          - {account_id: B, mrr_local: 100, valid_from_utc: "2026-01-02 00:00:00", valid_to_utc: "2026-01-31 23:00:00"}
+          - {account_id: B, mrr_local: 200, valid_from_utc: "2026-01-31 23:00:00", valid_to_utc: "9999-12-31 00:00:00"}
+          - {account_id: C, mrr_local: 100, valid_from_utc: "2026-01-02 00:00:00", valid_to_utc: "2026-02-01 00:00:00"}
+          - {account_id: C, mrr_local: 300, valid_from_utc: "2026-02-01 00:00:00", valid_to_utc: "9999-12-31 00:00:00"}
+    expect:
+      rows:
+        - {account_id: A, month_start: 2026-01-01, mrr_local: 100}
+        - {account_id: A, month_start: 2026-02-01, mrr_local: 100}
+        - {account_id: B, month_start: 2026-01-01, mrr_local: 200}
+        - {account_id: B, month_start: 2026-02-01, mrr_local: 200}
+        - {account_id: C, month_start: 2026-01-01, mrr_local: 100}
+        - {account_id: C, month_start: 2026-02-01, mrr_local: 300}

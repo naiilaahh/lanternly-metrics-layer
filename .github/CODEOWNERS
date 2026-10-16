@@ -1,0 +1,13 @@
+# RFC-0001 §6: who must approve changes to governed metric logic.
+*                                         @lanternly/analytics-engineering
+
+# Metric definitions: every change needs the Metrics Council (tier-1 rules are checked by lint + review)
+/models/semantic/_metrics.yml             @lanternly/metrics-council @lanternly/analytics-engineering
+/models/semantic/_semantic_models.yml     @lanternly/analytics-engineering
+/docs/metric_logic_rules.md               @lanternly/metrics-council
+/docs/rfc/                                @lanternly/metrics-council
+
+# Domain logic
+/models/marts/finance/                    @lanternly/finance-analytics
+/models/marts/product/                    @lanternly/product-analytics
+/macros/                                  @lanternly/analytics-engineering

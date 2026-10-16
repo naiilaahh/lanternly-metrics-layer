@@ -1,0 +1,74 @@
+version: 2
+
+models:
+  - name: stg_accounts
+    description: One row per account, renamed and typed. Test/QA accounts are flagged, not removed.
+    columns:
+      - name: account_id
+        data_tests: [unique, not_null]
+      - name: segment
+        data_tests:
+          - accepted_values:
+              arguments: {values: ["SMB", "Mid-Market", "Enterprise"]}
+      - name: billing_currency
+        data_tests:
+          - accepted_values:
+              arguments: {values: ["USD", "EUR", "GBP"]}
+
+  - name: stg_subscription_versions
+    description: SCD2 history of subscription terms. valid_to_utc is exclusive.
+    columns:
+      - name: subscription_version_id
+        data_tests: [unique, not_null]
+      - name: account_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments: {to: "ref('stg_accounts')", field: account_id}
+      - name: mrr_local
+        data_tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              arguments: {min_value: 0}
+      - name: billing_interval
+        data_tests:
+          - accepted_values:
+              arguments: {values: ["month", "year"]}
+
+  - name: stg_invoice_lines
+    columns:
+      - name: invoice_id
+        data_tests: [unique, not_null]
+      - name: line_type
+        data_tests:
+          - accepted_values:
+              arguments: {values: ["subscription", "subscription_proration", "onboarding_services", "usage_overage"]}
+      - name: status
+        data_tests:
+          - accepted_values:
+              arguments: {values: ["paid", "open", "void"]}
+
+  - name: stg_refunds
+    columns:
+      - name: refund_id
+        data_tests: [unique, not_null]
+      - name: invoice_id
+        data_tests:
+          - relationships:
+              arguments: {to: "ref('stg_invoice_lines')", field: invoice_id}
+      - name: refund_reason
+        description: Drives revenue treatment, see MLR-001.
+        data_tests:
+          - accepted_values:
+              arguments: {values: ["service_credit", "duplicate_charge", "early_termination"]}
+
+  - name: stg_users
+    columns:
+      - name: user_id
+        data_tests: [unique, not_null]
+
+  - name: stg_product_events
+    description: Deduplicated product events (MLR-011). System events without a user are dropped.
+    columns:
+      - name: event_id
+        data_tests: [unique, not_null]

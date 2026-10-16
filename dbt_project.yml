@@ -1,0 +1,72 @@
+name: lanternly_metrics
+version: "1.0.0"
+config-version: 2
+require-dbt-version: [">=1.10.8", "<2.0.0"]   # generic-test `arguments:` + nested cumulative params
+
+profile: lanternly_metrics
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+test-paths: ["tests"]
+analysis-paths: ["analyses"]
+
+vars:
+  # The last fully closed month. Board metrics never report an open month (MLR-004).
+  last_closed_month: "2026-09-01"
+  metrics_start_month: "2025-01-01"
+  # Lifetime cap used by LTV when trailing churn approaches zero (MLR-014).
+  ltv_max_lifetime_months: 60
+  # Event names that do NOT count as user activity (MLR-009).
+  passive_event_names: ["email_digest_opened", "session_heartbeat", "login_page_viewed", "api_webhook_received"]
+
+models:
+  lanternly_metrics:
+    +persist_docs: {relation: true, columns: true}
+    staging:
+      +schema: staging
+      +materialized: view
+    intermediate:
+      +schema: intermediate
+      +materialized: view
+    marts:
+      +schema: marts
+      +materialized: table
+      +contract: {enforced: false}
+      finance:
+        +tags: ["finance", "tier_1"]
+      product:
+        +tags: ["product"]
+    semantic:
+      +schema: semantic
+      +materialized: table
+
+seeds:
+  lanternly_metrics:
+    +schema: raw
+    raw_accounts:
+      +column_types: {created_at: timestamp, is_test_account: boolean}
+    raw_subscription_versions:
+      +column_types: {valid_from: timestamp, valid_to: timestamp, mrr_local: "numeric(14,2)",
+                      unit_price_local: "numeric(14,2)", discount_pct: "numeric(5,4)"}
+    raw_invoice_lines:
+      +column_types: {issued_at: timestamp, amount: "numeric(14,2)", service_period_start: timestamp,
+                      service_period_end: timestamp, subscription_id: varchar}
+    raw_refunds:
+      +column_types: {refunded_at: timestamp, amount: "numeric(14,2)"}
+    raw_fx_rates_monthly:
+      +column_types: {rate_month: date, usd_per_unit: "numeric(10,4)"}
+    raw_fx_planning_rates:
+      +column_types: {usd_per_unit: "numeric(10,4)"}
+    raw_acquisition_costs:
+      +column_types: {cost_month: date, amount_usd: "numeric(14,2)", is_acquisition_cost: boolean}
+    raw_cogs:
+      +column_types: {cost_month: date, amount_usd: "numeric(14,2)"}
+    raw_users:
+      +column_types: {created_at: timestamp, timezone: varchar, is_internal: boolean}
+    raw_product_events:
+      +column_types: {occurred_at_utc: timestamp, user_id: varchar}
+
+data_tests:
+  +severity: error
+  +store_failures: true

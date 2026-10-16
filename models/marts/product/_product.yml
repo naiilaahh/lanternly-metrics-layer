@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: fct_user_activity_daily
+    description: One row per user per LOCAL calendar day with at least one qualifying event (MLR-008..011).
+    columns:
+      - name: user_day_id
+        data_tests: [unique, not_null]
+      - name: account_id
+        data_tests:
+          - relationships:
+              arguments: {to: "ref('dim_accounts')", field: account_id}
+      - name: qualifying_event_count
+        data_tests:
+          - dbt_utils.accepted_range:
+              arguments: {min_value: 1}
+
+  - name: fct_engagement_daily
+    description: Company DAU, rolling 28-day MAU and stickiness by local date (MLR-015). Export table for tools that cannot query the semantic layer.
+    data_tests:
+      - dbt_utils.expression_is_true:
+          arguments: {expression: "dau <= mau_28d"}
+    columns:
+      - name: metric_date
+        data_tests: [unique, not_null]
+      - name: stickiness
+        data_tests:
+          - dbt_utils.accepted_range:
+              arguments: {min_value: 0, max_value: 1}
